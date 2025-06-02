@@ -113,8 +113,8 @@ Normalize across years to compare popularity/influence
 
 The interactive Shiny application will serve as the primary interface for exploring the evolution of Sailor Shift's career, her influence network, and the spread of Oceanus Folk. The core visualization will be a dynamically generated network graph, with accompanying temporal charts and statistical summaries to enrich the narrative.
 
-::: panel-subset
-### Input
+::: panel-tabset
+## Input
 
 1.  Reference Node (Artist Selector) To avoid overwhelming the user with the full network (which contains over 60,000 nodes and 75,000 edges), users must select a reference node, such as Sailor Shift or another artist of interest. This serves as the anchor for all subsequent filtering.
 
@@ -139,8 +139,8 @@ Nodes not involved in active edges at that date will be excluded
 UI Element: sliderInput() with year or month granularity
 
 Function: Allows exploration of an artist's evolving career and influence
-
-### Output
+ 
+## Output
 
 | Output | Description |
 |---------------------------|---------------------------------------------|
@@ -149,3 +149,4 @@ Function: Allows exploration of an artist's evolving career and influence
 | **Genre Distribution Plot (`ggplot2`)** | Shows dominant genres over time or in current neighborhood |
 | **Influence Timeline (`line chart`)** | Tracks how the artist's influence score evolved over time |
 :::
+
