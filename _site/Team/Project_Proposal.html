@@ -135,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#shiny-application-design" id="toc-shiny-application-design" class="nav-link" data-scroll-target="#shiny-application-design">5 Shiny Application Design</a></li>
   <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages">6 R Packages</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">7</a></li>
+  <li><a href="#prototypes-and-storyboards" id="toc-prototypes-and-storyboards" class="nav-link" data-scroll-target="#prototypes-and-storyboards">7 Prototypes and Storyboards</a></li>
   </ul>
 </nav>
     </div>
@@ -227,8 +227,8 @@ ul.task-list li input[type="checkbox"] {
 <h1>5 Shiny Application Design</h1>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 34%">
-<col style="width: 65%">
+<col style="width: 36%">
+<col style="width: 63%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -260,8 +260,8 @@ ul.task-list li input[type="checkbox"] {
 <h1>6 R Packages</h1>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 34%">
-<col style="width: 65%">
+<col style="width: 36%">
+<col style="width: 63%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -317,8 +317,65 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </section>
-<section id="section" class="level1">
-<h1>7</h1>
+<section id="prototypes-and-storyboards" class="level1">
+<h1>7 Prototypes and Storyboards</h1>
+<p>The interactive Shiny application will serve as the primary interface for exploring the evolution of Sailor Shift’s career, her influence network, and the spread of Oceanus Folk. The core visualization will be a dynamically generated network graph, with accompanying temporal charts and statistical summaries to enrich the narrative.</p>
+<div class="panel-subset">
+<section id="input" class="level3">
+<h3 class="anchored" data-anchor-id="input">Input</h3>
+<ol type="1">
+<li>Reference Node (Artist Selector) To avoid overwhelming the user with the full network (which contains over 60,000 nodes and 75,000 edges), users must select a reference node, such as Sailor Shift or another artist of interest. This serves as the anchor for all subsequent filtering.</li>
+</ol>
+<p>UI Element: selectInput() dropdown or searchable selectizeInput()</p>
+<p>Function: Defines the ego-network center from which we measure influence, collaborations, and diffusion</p>
+<ol start="2" type="1">
+<li>Network Depth (Proximity Filter) After selecting a reference node, the depth parameter will determine how far out the graph should render — in terms of shortest path distance from the selected node. Since artist subnetworks vary widely in size and density:</li>
+</ol>
+<p>A checkbox toggle will allow rendering of the entire connected component</p>
+<p>UI Elements: sliderInput() + checkboxInput() for “show full network”</p>
+<p>Function: Controls graph complexity and visual clutter</p>
+<ol start="3" type="1">
+<li>Date (Temporal Filter) To capture temporal dynamics, a date slider will be used to render the state of the network at a specific point in time. Only:</li>
+</ol>
+<p>Edges with a timestamp prior to or equal to the selected date will be rendered</p>
+<p>Nodes not involved in active edges at that date will be excluded</p>
+<p>UI Element: sliderInput() with year or month granularity</p>
+<p>Function: Allows exploration of an artist’s evolving career and influence</p>
+</section>
+<section id="output" class="level3">
+<h3 class="anchored" data-anchor-id="output">Output</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 37%">
+<col style="width: 62%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Output</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Network Graph (<code>ggraph</code>)</strong></td>
+<td>Visualizes selected artist’s ego-network at specified depth and time</td>
+</tr>
+<tr class="even">
+<td><strong>Node Tooltip Summary</strong></td>
+<td>Hover or click to show artist/album/song info, genre, notoriety</td>
+</tr>
+<tr class="odd">
+<td><strong>Genre Distribution Plot (<code>ggplot2</code>)</strong></td>
+<td>Shows dominant genres over time or in current neighborhood</td>
+</tr>
+<tr class="even">
+<td><strong>Influence Timeline (<code>line chart</code>)</strong></td>
+<td>Tracks how the artist’s influence score evolved over time</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
 
 
 </section>
