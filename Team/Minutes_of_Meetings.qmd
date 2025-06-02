@@ -1,0 +1,72 @@
+---
+title: "Minutes of Meetings"
+format: html
+---
+
+# ISSS608 Group 10 - Project Meeting Minutes
+
+### Minutes of Team Meeting-1
+
+**Date :** Sunday, 2nd June 2025
+
+**Time :** 10:30am-11:30am
+
+**Present:**
+
+Evangeline Olivia Sidiharto Kusumoputri
+
+Patricia
+
+Xu, Xinyi
+
+### Agenda Items
+
+1.  Understanding the Challenge and Dataset Scope Action: Reviewed the Mini-Challenge 1 brief and the dataset in knowledge graph format (nodes and links representing artists, albums, collaborations, and influence).
+
+**Discussion:**
+
+The dataset is semi-structured with `nodes` representing entities (e.g., Sailor, artists, songs, albums) and `edges` representing relationships (e.g., collaboration, influence, genre flow).
+
+We identified key data fields like`Node Type`, `genre`, `Edge Type`, and timestamp fields (`release_date`, `notoriety_date`).
+
+**Outcome:**
+
+Agreed to treat this as a network analysis and visualization problem centered around the career and influence of Sailor Shift, with temporal, stylistic, and relational dimensions.
+
+2.  Identifying Key Research Questions Action: Brainstormed questions aligned with the challenge deliverables. Based on different questions we are going to solve, we decided each person will take one question to analyze and then combine the analysis all together at the end.
+
+    **Outcome: Team prioritized the following analytical goals:**
+
+-   Influence Network: Who influenced Sailor, and whom has she influenced directly or indirectly?
+
+-   Collaborations: Who are her most frequent collaborators across time and genres?
+
+-   Genre Flow: How has Oceanus Folk spread across the global music network?
+
+-   Temporal Dynamics: Did the influence of Oceanus Folk rise gradually or intermittently?
+
+-   Genre Evolution: How has Oceanus Folk itself changed under Sailor’s influence?
+
+-   Rising Star Profile: What patterns (e.g., collaborations, genre shifts, notoriety timing) define an artist’s rise?
+
+**Forecasting:** Predict the next three potential Oceanus Folk stars using network position and career paths.
+
+3.  Technical Challenges and Considerations Action: Identified data cleaning and modeling tasks.
+
+**Outcome:**
+
+-   Clean missing or malformed IDs in `from` and `to`fields.
+
+-   Harmonize time fields and assign year-based bins for temporal analysis.
+
+-   Categorize and recode Edge Types into weighted influence scores.
+
+-   Validate node uniqueness and remove duplicates.
+
+ **Next Steps** Refine the visual storytelling narrative using exploratory findings.
+
+-   Align each visualization with one or more of the challenge questions.
+
+-   Begin drafting poster components with annotated visuals and insights.
+
+**Next Meeting Scheduled**: 5th- June( 8 pm- 9 pm)

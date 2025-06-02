@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "Team/Project_Proposal.html",
+    "href": "Team/Project_Proposal.html",
+    "title": "Project Proposal",
+    "section": "",
+    "text": "Sailor Shift and the Rise of Oceanus Folk: An Interactive Network Analysis"
+  },
+  {
+    "objectID": "Team/Project_Proposal.html#data-wrangling",
+    "href": "Team/Project_Proposal.html#data-wrangling",
+    "title": "Project Proposal",
+    "section": "4.1 Data Wrangling",
+    "text": "4.1 Data Wrangling\nLoad the JSON graph using networkx::node_link_graph() or tidygraph in R\nNormalize and clean node attributes (e.g., missing stage names, convert dates)\nCategorize edge types into:\nInfluence edges: DirectlySamples, CoverOf, InStyleOf, etc.\nCollaboration edges: PerformerOf, ProducerOf, MemberOf, etc."
+  },
+  {
+    "objectID": "Team/Project_Proposal.html#network-construction",
+    "href": "Team/Project_Proposal.html#network-construction",
+    "title": "Project Proposal",
+    "section": "4.2 Network Construction",
+    "text": "4.2 Network Construction\nBuild full music influence/collaboration graph\nExtract ego networks for Sailor Shift\nFilter by time window and depth (1st–3rd degree)"
+  },
+  {
+    "objectID": "Team/Project_Proposal.html#temporal-analysis",
+    "href": "Team/Project_Proposal.html#temporal-analysis",
+    "title": "Project Proposal",
+    "section": "4.3 Temporal Analysis",
+    "text": "4.3 Temporal Analysis\nUse release_date, notoriety_date, written_date to generate year-based snapshots\nTrack genre diffusion via temporal network visualizations\nAnalyze intermittent and gradual influence patterns"
+  },
+  {
+    "objectID": "Team/Project_Proposal.html#centrality-prediction",
+    "href": "Team/Project_Proposal.html#centrality-prediction",
+    "title": "Project Proposal",
+    "section": "4.4 Centrality & Prediction",
+    "text": "4.4 Centrality & Prediction\nCompute PageRank, Betweenness, Degree\nNormalize across years to compare popularity/influence"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Visual Analytics Project",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "Team/Minutes_of_Meetings.html",
+    "href": "Team/Minutes_of_Meetings.html",
+    "title": "Minutes of Meetings",
+    "section": "",
+    "text": "ISSS608 Group 10 - Project Meeting Minutes\n\nMinutes of Team Meeting-1\nDate : Sunday, 2nd June 2025\nTime : 10:30am-11:30am\nPresent:\nEvangeline Olivia Sidiharto Kusumoputri\nPatricia\nXu, Xinyi\n\n\nAgenda Items\n\nUnderstanding the Challenge and Dataset Scope Action: Reviewed the Mini-Challenge 1 brief and the dataset in knowledge graph format (nodes and links representing artists, albums, collaborations, and influence).\n\nDiscussion:\nThe dataset is semi-structured with nodes representing entities (e.g., Sailor, artists, songs, albums) and edges representing relationships (e.g., collaboration, influence, genre flow).\nWe identified key data fields likeNode Type, genre, Edge Type, and timestamp fields (release_date, notoriety_date).\nOutcome:\nAgreed to treat this as a network analysis and visualization problem centered around the career and influence of Sailor Shift, with temporal, stylistic, and relational dimensions.\n\nIdentifying Key Research Questions Action: Brainstormed questions aligned with the challenge deliverables. Based on different questions we are going to solve, we decided each person will take one question to analyze and then combine the analysis all together at the end.\nOutcome: Team prioritized the following analytical goals:\n\n\nInfluence Network: Who influenced Sailor, and whom has she influenced directly or indirectly?\nCollaborations: Who are her most frequent collaborators across time and genres?\nGenre Flow: How has Oceanus Folk spread across the global music network?\nTemporal Dynamics: Did the influence of Oceanus Folk rise gradually or intermittently?\nGenre Evolution: How has Oceanus Folk itself changed under Sailor’s influence?\nRising Star Profile: What patterns (e.g., collaborations, genre shifts, notoriety timing) define an artist’s rise?\n\nForecasting: Predict the next three potential Oceanus Folk stars using network position and career paths.\n\nTechnical Challenges and Considerations Action: Identified data cleaning and modeling tasks.\n\nOutcome:\n\nClean missing or malformed IDs in from and tofields.\nHarmonize time fields and assign year-based bins for temporal analysis.\nCategorize and recode Edge Types into weighted influence scores.\nValidate node uniqueness and remove duplicates.\n\nNext Steps Refine the visual storytelling narrative using exploratory findings.\n\nAlign each visualization with one or more of the challenge questions.\nBegin drafting poster components with annotated visuals and insights.\n\nNext Meeting Scheduled: 5th- June( 8 pm- 9 pm)"
+  }
+]

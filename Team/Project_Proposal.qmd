@@ -1,0 +1,112 @@
+---
+title: "Project Proposal"
+date-modified: "last-modified"
+execute:
+  echo: true
+  eval: true
+  warning: false
+  freeze: true
+---
+
+Sailor Shift and the Rise of Oceanus Folk: An Interactive Network Analysis
+
+# 1 Motivation
+
+Oceanus native Sailor Shift has become a global music icon, with her success fueling the spread of Oceanus Folk music far beyond the island nation’s borders. As a result, her musical journey offers a compelling case study in how individual artists can reshape genres and influence entire musical ecosystems.
+
+To support journalist Silas Reed’s feature Oceanus Folk: Then-and-Now, this project seeks to visualize and analyze Sailor Shift’s career trajectory, collaboration network, and genre impact. The study also examines how Oceanus Folk has evolved through her influence and identifies potential rising stars in the genre.
+
+# 2 Objectives
+
+This project aims to build a Shiny web application that enables users to explore and interpret the following:
+
+-   Sailor Shift’s influence: Who influenced her and whom she has influenced directly or indirectly
+
+-   Collaboration patterns: Which artists and genres have been shaped through her work
+
+-   Genre evolution: How Oceanus Folk has spread and changed over time
+
+-   Artist comparison: Explore the career trajectories of multiple artists in parallel
+
+-   Rising star prediction: Identify up-and-coming Oceanus Folk artists using network centrality and activity measures
+
+# 3 Dataset Description
+
+The data is from `MC1_graph.json`, a directed multigraph with:
+
+17,412 nodes and 37,857 edges
+
+Node types: `Person`, `Song`, `Album`, `MusicalGroup`, `RecordLabel`
+
+Edge types: Musical relationships like `PerformerOf`, `ProducerOf`, `InterpolatesFrom`, `InStyleOf`, `CoverOf`,`MemberOf`, `ComposerOf`,`LyricistOf`,`LyricalReferenceTo`, `DirectlySamples`, `RecordedBy`, `DistributedBy`
+
+Attributes of interest:
+
+Songs and Albums: genre, release date, notable, notoriety date
+
+Persons: name, stage name
+
+Edges: influence and collaboration types between nodes
+
+# 4 methodology
+
+## 4.1 Data Wrangling
+
+Load the JSON graph using networkx::node_link_graph() or tidygraph in R
+
+Normalize and clean node attributes (e.g., missing stage names, convert dates)
+
+Categorize edge types into:
+
+Influence edges: DirectlySamples, CoverOf, InStyleOf, etc.
+
+Collaboration edges: PerformerOf, ProducerOf, MemberOf, etc.
+
+## 4.2 Network Construction
+
+Build full music influence/collaboration graph
+
+Extract ego networks for Sailor Shift
+
+Filter by time window and depth (1st–3rd degree)
+
+## 4.3 Temporal Analysis
+
+Use `release_date`, `notoriety_date`, `written_date` to generate year-based snapshots
+
+Track genre diffusion via temporal network visualizations
+
+Analyze intermittent and gradual influence patterns
+
+## 4.4 Centrality & Prediction
+
+Compute PageRank, Betweenness, Degree
+
+Normalize across years to compare popularity/influence
+
+# 5 Shiny Application Design
+
+| Sub-graphs | Description |
+|-------------------------|------------------------------------------------|
+| **1. Sailor Shift’s Network** | Visualize Sailor’s influence and collaborations with year & depth sliders |
+| **2. Oceanus Folk Spread** | Show genre diffusion over time and by edge type |
+| **3. Artist Career Comparison** | Select and compare 3 artists on centrality and release activity |
+| **4. Future Oceanus Folk Stars** | List & plot predicted future stars by score and network features |
+
+# 6 R Packages
+
+| Package | Description |
+|-------------------------|------------------------------------------------|
+| **tidyverse** | For data wrangling (`dplyr`, `ggplot2`, `tibble`) |
+| **jsonlite** | To parse the `MC1_graph.json` file |
+| **lubridate** | For handling and filtering date fields like `release_date` and `notoriety_date` |
+| **tidygraph** | Core graph analysis framework built on `igraph` |
+| **ggraph** | For plotting influence and collaboration networks |
+| **igraph** | For calculating centrality measures and ego networks |
+| **shiny** | To build the interactive application |
+| **shinyWidgets** | For enhanced UI elements in Shiny |
+| **plotly** or **ggiraph** | For interactive network or radar visualizations |
+| **DT** | For sortable and searchable artist tables in the app |
+| **qs** or **feather** | For fast loading/saving of preprocessed graph snapshots |
+
+# 7 
