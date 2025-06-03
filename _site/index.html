@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Visual Analytics Project – ISSS608-VAA-GroupProject</title>
+<title>index</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -38,7 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ddd961a2510921635943dfbbd19534c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b596c98ae631f6576cce9222713381ee.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed homepage">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">ISSS608-VAA-GroupProject</span>
+    <span class="navbar-title">Oceanus Stars</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -90,19 +90,28 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
+<span class="menu-text">Overview</span></a>
   </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-prototype" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Prototype</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-prototype">    
+        <li class="dropdown-header">
+  </li>
+    </ul>
+  </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-team" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Team</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-team">    
         <li>
-    <a class="dropdown-item" href="./Visual Analytics Project/Team/Project_Proposal.html">
+    <a class="dropdown-item" href="./Team/Project_Proposal.html">
  <span class="dropdown-text">Project Proposal</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./Visual Analytics Project/Team/Minutes_of_Meetings.html">
+    <a class="dropdown-item" href="./Team/Minutes_of_Meetings/MM_Page.html">
  <span class="dropdown-text">Minutes of Meetings</span></a>
   </li>  
     </ul>
@@ -115,34 +124,46 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Visual Analytics Project</h1>
+
+
+
+<div class="container">
+<div id="text-left" class="text text-left">
+<p>Oceanus</p>
 </div>
+<div id="text-right" class="text text-right">
+<p>Stars</p>
+</div>
+<div id="combined" class="text">
+<p>Oceanus Stars</p>
+</div>
+<div id="after" class="mini">
+<p>Unveiling the Stories Behind Numbers</p>
+</div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const leftText = document.getElementById('text-left');
+    const rightText = document.getElementById('text-right');
+    const combinedText = document.getElementById('combined');
+    const afterText = document.getElementById('after');
 
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
+    // When the right text animation ends, hide both texts and show the combined text
+    rightText.addEventListener('animationend', function() {
+      leftText.style.display = 'none';
+      rightText.style.display = 'none';
+      combinedText.classList.add('show');
+      afterText.classList.add('show');
+    });
+  });
+</script>
 
 
 
@@ -565,6 +586,26 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>ISSS 608 Project</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 

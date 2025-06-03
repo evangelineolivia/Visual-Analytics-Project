@@ -1,0 +1,13 @@
+---
+title: "Group 10 Minutes of Meetings Records"
+listing:
+  contents: data
+  type: table
+  sort: date
+format:
+  html:
+    toc: false
+    page-layout: article
+body-classes: others
+---
+

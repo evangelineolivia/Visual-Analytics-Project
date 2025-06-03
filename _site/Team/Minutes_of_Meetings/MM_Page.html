@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project Proposal</title>
+<title>Group 10 Minutes of Meetings Records</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b596c98ae631f6576cce9222713381ee.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-listing/list.min.js"></script>
+<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-b596c98ae631f6576cce9222713381ee.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -66,19 +68,77 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
 
-<link rel="stylesheet" href="../styles.css">
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed others">
+<body class="nav-fixed others fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Oceanus Stars</span>
     </a>
   </div>
@@ -89,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -107,11 +167,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-team">    
         <li>
-    <a class="dropdown-item" href="../Team/Project_Proposal.html">
+    <a class="dropdown-item" href="../../Team/Project_Proposal.html">
  <span class="dropdown-text">Project Proposal</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../Team/Minutes_of_Meetings/MM_Page.html">
+    <a class="dropdown-item" href="../../Team/Minutes_of_Meetings/MM_Page.html">
  <span class="dropdown-text">Minutes of Meetings</span></a>
   </li>  
     </ul>
@@ -127,33 +187,13 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">1 Motivation</a></li>
-  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">2 Objectives</a></li>
-  <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description">3 Dataset Description</a></li>
-  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">4 methodology</a>
-  <ul class="collapse">
-  <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link" data-scroll-target="#data-wrangling">4.1 Data Wrangling</a></li>
-  <li><a href="#network-construction" id="toc-network-construction" class="nav-link" data-scroll-target="#network-construction">4.2 Network Construction</a></li>
-  <li><a href="#temporal-analysis" id="toc-temporal-analysis" class="nav-link" data-scroll-target="#temporal-analysis">4.3 Temporal Analysis</a></li>
-  <li><a href="#centrality-prediction" id="toc-centrality-prediction" class="nav-link" data-scroll-target="#centrality-prediction">4.4 Centrality &amp; Prediction</a></li>
-  </ul></li>
-  <li><a href="#shiny-application-design" id="toc-shiny-application-design" class="nav-link" data-scroll-target="#shiny-application-design">5 Shiny Application Design</a></li>
-  <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages">6 R Packages</a></li>
-  <li><a href="#prototypes-and-storyboards" id="toc-prototypes-and-storyboards" class="nav-link" data-scroll-target="#prototypes-and-storyboards">7 Prototypes and Storyboards</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Project Proposal</h1>
+<h1 class="title">Group 10 Minutes of Meetings Records</h1>
 </div>
 
 
@@ -162,12 +202,6 @@ ul.task-list li input[type="checkbox"] {
 
     
   
-    <div>
-    <div class="quarto-title-meta-heading">Modified</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date-modified">June 3, 2025</p>
-    </div>
-  </div>
     
   </div>
   
@@ -176,221 +210,68 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Sailor Shift and the Rise of Oceanus Folk: An Interactive Network Analysis</p>
-<section id="motivation" class="level1">
-<h1>1 Motivation</h1>
-<p>Oceanus native Sailor Shift has become a global music icon, with her success fueling the spread of Oceanus Folk music far beyond the island nation’s borders. As a result, her musical journey offers a compelling case study in how individual artists can reshape genres and influence entire musical ecosystems.</p>
-<p>To support journalist Silas Reed’s feature Oceanus Folk: Then-and-Now, this project seeks to visualize and analyze Sailor Shift’s career trajectory, collaboration network, and genre impact. The study also examines how Oceanus Folk has evolved through her influence and identifies potential rising stars in the genre.</p>
-</section>
-<section id="objectives" class="level1">
-<h1>2 Objectives</h1>
-<p>This project aims to build a Shiny web application that enables users to explore and interpret the following:</p>
-<ul>
-<li><p>Sailor Shift’s influence: Who influenced her and whom she has influenced directly or indirectly</p></li>
-<li><p>Collaboration patterns: Which artists and genres have been shaped through her work</p></li>
-<li><p>Genre evolution: How Oceanus Folk has spread and changed over time</p></li>
-<li><p>Artist comparison: Explore the career trajectories of multiple artists in parallel</p></li>
-<li><p>Rising star prediction: Identify up-and-coming Oceanus Folk artists using network centrality and activity measures</p></li>
-</ul>
-</section>
-<section id="dataset-description" class="level1">
-<h1>3 Dataset Description</h1>
-<p>The data is from <code>MC1_graph.json</code>, a directed multigraph with:</p>
-<p>17,412 nodes and 37,857 edges</p>
-<p>Node types: <code>Person</code>, <code>Song</code>, <code>Album</code>, <code>MusicalGroup</code>, <code>RecordLabel</code></p>
-<p>Edge types: Musical relationships like <code>PerformerOf</code>, <code>ProducerOf</code>, <code>InterpolatesFrom</code>, <code>InStyleOf</code>, <code>CoverOf</code>,<code>MemberOf</code>, <code>ComposerOf</code>,<code>LyricistOf</code>,<code>LyricalReferenceTo</code>, <code>DirectlySamples</code>, <code>RecordedBy</code>, <code>DistributedBy</code></p>
-<p>Attributes of interest:</p>
-<p>Songs and Albums: genre, release date, notable, notoriety date</p>
-<p>Persons: name, stage name</p>
-<p>Edges: influence and collaboration types between nodes</p>
-</section>
-<section id="methodology" class="level1">
-<h1>4 methodology</h1>
-<section id="data-wrangling" class="level2">
-<h2 class="anchored" data-anchor-id="data-wrangling">4.1 Data Wrangling</h2>
-<p>Load the JSON graph using networkx::node_link_graph() or tidygraph in R</p>
-<p>Normalize and clean node attributes (e.g., missing stage names, convert dates)</p>
-<p>Categorize edge types into:</p>
-<p>Influence edges: DirectlySamples, CoverOf, InStyleOf, etc.</p>
-<p>Collaboration edges: PerformerOf, ProducerOf, MemberOf, etc.</p>
-</section>
-<section id="network-construction" class="level2">
-<h2 class="anchored" data-anchor-id="network-construction">4.2 Network Construction</h2>
-<p>Build full music influence/collaboration graph</p>
-<p>Extract ego networks for Sailor Shift</p>
-<p>Filter by time window and depth (1st–3rd degree)</p>
-</section>
-<section id="temporal-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="temporal-analysis">4.3 Temporal Analysis</h2>
-<p>Use <code>release_date</code>, <code>notoriety_date</code>, <code>written_date</code> to generate year-based snapshots</p>
-<p>Track genre diffusion via temporal network visualizations</p>
-<p>Analyze intermittent and gradual influence patterns</p>
-</section>
-<section id="centrality-prediction" class="level2">
-<h2 class="anchored" data-anchor-id="centrality-prediction">4.4 Centrality &amp; Prediction</h2>
-<p>Compute PageRank, Betweenness, Degree</p>
-<p>Normalize across years to compare popularity/influence</p>
-</section>
-</section>
-<section id="shiny-application-design" class="level1">
-<h1>5 Shiny Application Design</h1>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 36%">
-<col style="width: 63%">
-</colgroup>
+
+
+
+
+<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+         <option value="listing-title-sort" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+<table class="quarto-listing-table table">
 <thead>
-<tr class="header">
-<th>Sub-graphs</th>
-<th>Description</th>
+<tr>
+<th>
+<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Date</a>
+</th>
+<th>
+<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
+</th>
+<th>
+<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
+</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
-<td><strong>1. Sailor Shift’s Network</strong></td>
-<td>Visualize Sailor’s influence and collaborations with year &amp; depth sliders</td>
-</tr>
-<tr class="even">
-<td><strong>2. Oceanus Folk Spread</strong></td>
-<td>Show genre diffusion over time and by edge type</td>
-</tr>
-<tr class="odd">
-<td><strong>3. Artist Career Comparison</strong></td>
-<td>Select and compare 3 artists on centrality and release activity</td>
-</tr>
-<tr class="even">
-<td><strong>4. Future Oceanus Folk Stars</strong></td>
-<td>List &amp; plot predicted future stars by score and network features</td>
+<tbody class="list">
+<tr data-index="0" data-listing-date-sort="1748793600000" data-listing-file-modified-sort="1748939751451" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="354" data-listing-title-sort="Minutes of Meetings 1" data-listing-filename-sort="Minutes_of_Meetings1.qmd">
+<td>
+<span class="listing-date">Jun 2, 2025</span>
+</td>
+<td>
+<a href="../../Team/Minutes_of_Meetings/data/Minutes_of_Meetings1.html" class="title listing-title">Minutes of Meetings 1</a>
+</td>
+<td>
+<span class="listing-author">Evangeline Olivia, Patricia Trisno, Xu Xinyi</span>
+</td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="r-packages" class="level1">
-<h1>6 R Packages</h1>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 36%">
-<col style="width: 63%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Package</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>tidyverse</strong></td>
-<td>For data wrangling (<code>dplyr</code>, <code>ggplot2</code>, <code>tibble</code>)</td>
-</tr>
-<tr class="even">
-<td><strong>jsonlite</strong></td>
-<td>To parse the <code>MC1_graph.json</code> file</td>
-</tr>
-<tr class="odd">
-<td><strong>lubridate</strong></td>
-<td>For handling and filtering date fields like <code>release_date</code> and <code>notoriety_date</code></td>
-</tr>
-<tr class="even">
-<td><strong>tidygraph</strong></td>
-<td>Core graph analysis framework built on <code>igraph</code></td>
-</tr>
-<tr class="odd">
-<td><strong>ggraph</strong></td>
-<td>For plotting influence and collaboration networks</td>
-</tr>
-<tr class="even">
-<td><strong>igraph</strong></td>
-<td>For calculating centrality measures and ego networks</td>
-</tr>
-<tr class="odd">
-<td><strong>shiny</strong></td>
-<td>To build the interactive application</td>
-</tr>
-<tr class="even">
-<td><strong>shinyWidgets</strong></td>
-<td>For enhanced UI elements in Shiny</td>
-</tr>
-<tr class="odd">
-<td><strong>plotly</strong> or <strong>ggiraph</strong></td>
-<td>For interactive network or radar visualizations</td>
-</tr>
-<tr class="even">
-<td><strong>DT</strong></td>
-<td>For sortable and searchable artist tables in the app</td>
-</tr>
-<tr class="odd">
-<td><strong>qs</strong> or <strong>feather</strong></td>
-<td>For fast loading/saving of preprocessed graph snapshots</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="prototypes-and-storyboards" class="level1">
-<h1>7 Prototypes and Storyboards</h1>
-<p>The interactive Shiny application will serve as the primary interface for exploring the evolution of Sailor Shift’s career, her influence network, and the spread of Oceanus Folk. The core visualization will be a dynamically generated network graph, with accompanying temporal charts and statistical summaries to enrich the narrative.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Input</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Output</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<ol type="1">
-<li>Reference Node (Artist Selector) To avoid overwhelming the user with the full network (which contains over 60,000 nodes and 75,000 edges), users must select a reference node, such as Sailor Shift or another artist of interest. This serves as the anchor for all subsequent filtering.</li>
-</ol>
-<p>UI Element: selectInput() dropdown or searchable selectizeInput()</p>
-<p>Function: Defines the ego-network center from which we measure influence, collaborations, and diffusion</p>
-<ol start="2" type="1">
-<li>Network Depth (Proximity Filter) After selecting a reference node, the depth parameter will determine how far out the graph should render — in terms of shortest path distance from the selected node. Since artist subnetworks vary widely in size and density:</li>
-</ol>
-<p>A checkbox toggle will allow rendering of the entire connected component</p>
-<p>UI Elements: sliderInput() + checkboxInput() for “show full network”</p>
-<p>Function: Controls graph complexity and visual clutter</p>
-<ol start="3" type="1">
-<li>Date (Temporal Filter) To capture temporal dynamics, a date slider will be used to render the state of the network at a specific point in time. Only:</li>
-</ol>
-<p>Edges with a timestamp prior to or equal to the selected date will be rendered</p>
-<p>Nodes not involved in active edges at that date will be excluded</p>
-<p>UI Element: sliderInput() with year or month granularity</p>
-<p>Function: Allows exploration of an artist’s evolving career and influence</p>
+<div class="listing-no-matching d-none">
+No matching items
 </div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 37%">
-<col style="width: 62%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Output</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Network Graph (<code>ggraph</code>)</strong></td>
-<td>Visualizes selected artist’s ego-network at specified depth and time</td>
-</tr>
-<tr class="even">
-<td><strong>Node Tooltip Summary</strong></td>
-<td>Hover or click to show artist/album/song info, genre, notoriety</td>
-</tr>
-<tr class="odd">
-<td><strong>Genre Distribution Plot (<code>ggplot2</code>)</strong></td>
-<td>Shows dominant genres over time or in current neighborhood</td>
-</tr>
-<tr class="even">
-<td><strong>Influence Timeline (<code>line chart</code>)</strong></td>
-<td>Tracks how the artist’s influence score evolved over time</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-
-
-</section>
-
-</main> <!-- /main -->
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

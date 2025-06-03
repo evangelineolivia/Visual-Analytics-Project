@@ -1,5 +1,45 @@
 ---
-title: "Visual Analytics Project"
+format:
+  html:
+    css: styles.css
+    toc: false
+page-layout: full
+body-classes: homepage
 ---
 
- 
+::::::: container
+::: {#text-left .text .text-left}
+Oceanus
+:::
+
+::: {#text-right .text .text-right}
+Stars
+:::
+
+::: {#combined .text}
+Oceanus Stars
+:::
+
+::: {#after .mini}
+Unveiling the Stories Behind Numbers
+:::
+:::::::
+
+```{=html}
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const leftText = document.getElementById('text-left');
+    const rightText = document.getElementById('text-right');
+    const combinedText = document.getElementById('combined');
+    const afterText = document.getElementById('after');
+
+    // When the right text animation ends, hide both texts and show the combined text
+    rightText.addEventListener('animationend', function() {
+      leftText.style.display = 'none';
+      rightText.style.display = 'none';
+      combinedText.classList.add('show');
+      afterText.classList.add('show');
+    });
+  });
+</script>
+```

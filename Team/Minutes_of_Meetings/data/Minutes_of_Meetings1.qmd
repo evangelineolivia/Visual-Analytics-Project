@@ -1,6 +1,9 @@
 ---
-title: "Minutes of Meetings"
+title: "Minutes of Meetings 1"
+date: 2025-06-02
+author: Evangeline Olivia, Patricia Trisno, Xu Xinyi
 format: html
+body-classes: others
 ---
 
 # ISSS608 Group 10 - Project Meeting Minutes
@@ -63,7 +66,7 @@ Agreed to treat this as a network analysis and visualization problem centered ar
 
 -   Validate node uniqueness and remove duplicates.
 
- **Next Steps** Refine the visual storytelling narrative using exploratory findings.
+**Next Steps** Refine the visual storytelling narrative using exploratory findings.
 
 -   Align each visualization with one or more of the challenge questions.
 

@@ -2,24 +2,35 @@ project:
   type: website
 
 website:
-  title: "ISSS608-VAA-GroupProject"
+
   navbar:
+    title: "Oceanus Stars"
+    background: "transparent"
+    foreground: "#ffff"
     right:
       - href: about.qmd
-        text: About
+        text: "Overview"
         
+      - text: "Prototype"
+        menu:
+          - text : " "
+      
       - text: "Team"
         menu:
           - text: "Project Proposal"
-            href: Visual Analytics Project/Team/Project_Proposal.html
-            
+            href: Team/Project_Proposal.html
           - text: "Minutes of Meetings" 
-            href: Visual Analytics Project/Team/Minutes_of_Meetings.html
+            href: Team/Minutes_of_Meetings/MM_Page.html
+  page-footer: 
+    background: "transparent"
+    foreground: "black"
+    left: "ISSS 608 Project" 
+    right: 
+      - icon: github
+        href: https://github.com
 format:
   html:
-    theme:
-      - cosmo
-      - brand
+    theme: default
     css: styles.css
     toc: true
 

@@ -6,6 +6,7 @@ execute:
   eval: true
   warning: false
   freeze: true
+body-classes: others
 ---
 
 Sailor Shift and the Rise of Oceanus Folk: An Interactive Network Analysis
@@ -87,7 +88,7 @@ Normalize across years to compare popularity/influence
 # 5 Shiny Application Design
 
 | Sub-graphs | Description |
-|--------------------------|----------------------------------------------|
+|--------------------------|---------------------------------------------|
 | **1. Sailor Shift’s Network** | Visualize Sailor’s influence and collaborations with year & depth sliders |
 | **2. Oceanus Folk Spread** | Show genre diffusion over time and by edge type |
 | **3. Artist Career Comparison** | Select and compare 3 artists on centrality and release activity |
@@ -96,7 +97,7 @@ Normalize across years to compare popularity/influence
 # 6 R Packages
 
 | Package | Description |
-|--------------------------|----------------------------------------------|
+|--------------------------|---------------------------------------------|
 | **tidyverse** | For data wrangling (`dplyr`, `ggplot2`, `tibble`) |
 | **jsonlite** | To parse the `MC1_graph.json` file |
 | **lubridate** | For handling and filtering date fields like `release_date` and `notoriety_date` |
@@ -139,7 +140,7 @@ Nodes not involved in active edges at that date will be excluded
 UI Element: sliderInput() with year or month granularity
 
 Function: Allows exploration of an artist's evolving career and influence
- 
+
 ## Output
 
 | Output | Description |
@@ -149,4 +150,3 @@ Function: Allows exploration of an artist's evolving career and influence
 | **Genre Distribution Plot (`ggplot2`)** | Shows dominant genres over time or in current neighborhood |
 | **Influence Timeline (`line chart`)** | Tracks how the artist's influence score evolved over time |
 :::
-
