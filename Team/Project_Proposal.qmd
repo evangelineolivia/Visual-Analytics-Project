@@ -228,6 +228,8 @@ Define what makes a rising star and forecast which Oceanus Folk artists are like
 
 # Prototypes and Storyboards
 
+![](prototype sketch.png){fig-align="center"}
+
 The interactive Shiny application will serve as the primary interface for exploring the evolution of Sailor Shift's career, her influence network, and the spread of Oceanus Folk. The core visualization will be a dynamically generated network graph, with accompanying temporal charts and statistical summaries to enrich the narrative.
 
 ::: panel-tabset
