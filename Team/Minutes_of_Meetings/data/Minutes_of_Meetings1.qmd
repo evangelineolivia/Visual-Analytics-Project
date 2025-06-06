@@ -1,5 +1,6 @@
 ---
 title: "Minutes of Meetings 1"
+description: "ISSS608 Group 10 - Project Meeting Minutes"
 date: 2025-06-02
 author: Evangeline Olivia, Patricia Trisno, Xu Xinyi
 format: 
