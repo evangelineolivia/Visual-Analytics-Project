@@ -61,7 +61,7 @@ Agreed to treat this as a network analysis and visualization problem centered ar
 
 **Outcome:**
 
--   Clean missing or malformed IDs in `from` and `to`fields.
+-   Clean missing or malformed IDs in `from` and `to` fields.
 
 -   Harmonize time fields and assign year-based bins for temporal analysis.
 

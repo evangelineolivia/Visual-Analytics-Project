@@ -17,11 +17,11 @@ Fame
 :::
 
 ::: {#combined .text}
-From Falk to Fame
+From Folk to Fame
 :::
 
 ::: {#after .mini}
-Unveiling the Stories Behind Numbers
+Tracing the Rise of Artists Through Data
 :::
 :::::::
 

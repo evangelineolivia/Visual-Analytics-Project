@@ -27,7 +27,7 @@ website:
     left: "ISSS 608 Project" 
     right: 
       - icon: github
-        href: https://github.com
+        href: https://github.com/xinyi-ux/Visual-Analytics-Project
 format:
   html:
     theme: default
