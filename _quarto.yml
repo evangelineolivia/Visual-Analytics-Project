@@ -33,6 +33,7 @@ format:
     theme: default
     css: styles.css
     toc: true
+    number-sections: true
 
 editor: visual
 

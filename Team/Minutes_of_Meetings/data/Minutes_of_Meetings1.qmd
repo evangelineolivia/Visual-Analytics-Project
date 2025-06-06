@@ -2,13 +2,15 @@
 title: "Minutes of Meetings 1"
 date: 2025-06-02
 author: Evangeline Olivia, Patricia Trisno, Xu Xinyi
-format: html
+format: 
+  html:
+    number-sections: false
 body-classes: others
 ---
 
 # ISSS608 Group 10 - Project Meeting Minutes
 
-### Minutes of Team Meeting-1
+### Minutes of Team Meeting 
 
 **Date :** Sunday, 2nd June 2025
 
@@ -16,11 +18,11 @@ body-classes: others
 
 **Present:**
 
-Evangeline Olivia Sidiharto Kusumoputri
+- Evangeline Olivia Sidiharto Kusumoputri
 
-Patricia
+- Patricia
 
-Xu, Xinyi
+- Xu, Xinyi
 
 ### Agenda Items
 
