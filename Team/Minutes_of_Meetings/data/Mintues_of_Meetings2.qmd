@@ -26,7 +26,7 @@ body-classes: others
 
 ### Agenda Items
 
-1.  **Module Prototyping Progress Review**
+#### 1.  **Module Prototyping Progress Review**
 
 **Action**: 
 Each member shared updates on the module they are individually developing as part of the Mini-Challenge 1 prototype.
@@ -44,7 +44,7 @@ Each member shared updates on the module they are individually developing as par
 **Outcome**: 
 Modules are progressing well, and all team members are on track to finalize them before integration.
 
-2. **Shiny App Integration Planning**
+#### 2. **Shiny App Integration Planning**
 
 **Action**: 
 Planned how individual prototype modules will be integrated into the final Shiny application.
@@ -60,7 +60,7 @@ Planned how individual prototype modules will be integrated into the final Shiny
 **Outcome**: 
 Integration strategy confirmed. Final modules will be modularized using `moduleServer()` and `UI()` structure for Shiny compatibility.
 
-3. **Set up a shared Git repository for version control and backup.**
+#### 3. **Set up a shared Git repository for version control and backup.**
 
 **Next Steps**
 
