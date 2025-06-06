@@ -25,10 +25,9 @@ body-classes: others
 
 ### Agenda Items
 
-#### 1.  **Module Prototyping Progress Review**
+#### 1. **Module Prototyping Progress Review**
 
-**Action**: 
-Each member shared updates on the module they are individually developing as part of the Mini-Challenge 1 prototype.
+**Action**: Each member shared updates on the module they are individually developing as part of the Mini-Challenge 1 prototype.
 
 **Discussion**:
 
@@ -40,31 +39,28 @@ Each member shared updates on the module they are individually developing as par
 
 -   Patricia explored visualizing collaboration density and node degree for genre evolution tracking.
 
-**Outcome**: 
-Modules are progressing well, and all team members are on track to finalize them before integration.
+**Outcome**: Modules are progressing well, and all team members are on track to finalize them before integration.
 
 #### 2. **Shiny App Integration Planning**
 
-**Action**: 
-Planned how individual prototype modules will be integrated into the final Shiny application.
+**Action**: Planned how individual prototype modules will be integrated into the final Shiny application.
 
 **Discussion**:
 
-- Agreed to use a tab-based interface where each tab represents one analytical module.
+-   Agreed to use a tab-based interface where each tab represents one analytical module.
 
-- Decided to define shared data inputs at the global level (server.R) and reuse across modules.
+-   Decided to define shared data inputs at the global level (server.R) and reuse across modules.
 
-- Discussed standardizing visual styling and color palettes for a consistent interface.
+-   Discussed standardizing visual styling and color palettes for a consistent interface.
 
-**Outcome**: 
-Integration strategy confirmed. Final modules will be modularized using `moduleServer()` and `UI()` structure for Shiny compatibility.
+**Outcome**: Integration strategy confirmed. Final modules will be modularized using `moduleServer()` and `UI()` structure for Shiny compatibility.
 
 #### 3. **Set up a shared Git repository for version control and backup.**
 
 **Next Steps**
 
-- Finalize  each module individually.
-- Begin layout design of the poster over the weekend.
-- Schedule dry run of full Shiny app by 10th June.
+-   Finalize each module individually.
+-   Begin layout design of the poster over the weekend.
+-   Schedule dry run of full Shiny app by 10th June.
 
 **Next Meeting Scheduled**: Monday, 16th June (7:00 pm – 8:00 pm)
