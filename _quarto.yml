@@ -4,12 +4,12 @@ project:
 website:
 
   navbar:
-    title: "Oceanus Stars"
+    title: "From Folk to Fame"
     background: "transparent"
     foreground: "#ffff"
     right:
-      - href: about.qmd
-        text: "Overview"
+      # - href: about.qmd
+      #   text: "Overview"
         
       - text: "Prototype"
         menu:

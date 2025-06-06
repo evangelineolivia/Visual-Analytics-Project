@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Team 10’s Project Proposal">
 
-<title>Project Proposal</title>
+<title>From Folk to Fame</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">Oceanus Stars</span>
+    <span class="navbar-title">From Folk to Fame</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -88,10 +89,6 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../about.html"> 
-<span class="menu-text">Overview</span></a>
-  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-prototype" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Prototype</span>
@@ -135,14 +132,38 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">1 Motivation</a></li>
   <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">2 Objectives</a></li>
   <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description">3 Dataset Description</a></li>
-  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">4 methodology</a>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">4 Methodology</a>
   <ul class="collapse">
-  <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link" data-scroll-target="#data-wrangling">4.1 Data Wrangling</a></li>
-  <li><a href="#network-construction" id="toc-network-construction" class="nav-link" data-scroll-target="#network-construction">4.2 Network Construction</a></li>
-  <li><a href="#temporal-analysis" id="toc-temporal-analysis" class="nav-link" data-scroll-target="#temporal-analysis">4.3 Temporal Analysis</a></li>
-  <li><a href="#centrality-prediction" id="toc-centrality-prediction" class="nav-link" data-scroll-target="#centrality-prediction">4.4 Centrality &amp; Prediction</a></li>
+  <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link" data-scroll-target="#data-wrangling">4.1 Data Wrangling</a>
+  <ul class="collapse">
+  <li><a href="#load-the-json-graph" id="toc-load-the-json-graph" class="nav-link" data-scroll-target="#load-the-json-graph">Load the JSON graph</a></li>
+  <li><a href="#standardize-and-clean-node-attributes" id="toc-standardize-and-clean-node-attributes" class="nav-link" data-scroll-target="#standardize-and-clean-node-attributes">Standardize and Clean Node Attributes</a></li>
+  <li><a href="#categorize-edge-types" id="toc-categorize-edge-types" class="nav-link" data-scroll-target="#categorize-edge-types">Categorize Edge Types</a></li>
   </ul></li>
-  <li><a href="#shiny-application-design" id="toc-shiny-application-design" class="nav-link" data-scroll-target="#shiny-application-design">5 Shiny Application Design</a></li>
+  <li><a href="#network-construction" id="toc-network-construction" class="nav-link" data-scroll-target="#network-construction">4.2 Network Construction</a>
+  <ul class="collapse">
+  <li><a href="#full-graph-construction" id="toc-full-graph-construction" class="nav-link" data-scroll-target="#full-graph-construction">Full Graph Construction</a></li>
+  <li><a href="#ego-network-extraction" id="toc-ego-network-extraction" class="nav-link" data-scroll-target="#ego-network-extraction">Ego Network Extraction</a></li>
+  </ul></li>
+  <li><a href="#temporal-analysis" id="toc-temporal-analysis" class="nav-link" data-scroll-target="#temporal-analysis">4.3 Temporal Analysis</a>
+  <ul class="collapse">
+  <li><a href="#time-based-snapshots" id="toc-time-based-snapshots" class="nav-link" data-scroll-target="#time-based-snapshots">Time-Based Snapshots</a></li>
+  <li><a href="#genre-diffusion-tracking" id="toc-genre-diffusion-tracking" class="nav-link" data-scroll-target="#genre-diffusion-tracking">Genre Diffusion Tracking</a></li>
+  <li><a href="#intermittent-vs.-gradual-influence-patterns" id="toc-intermittent-vs.-gradual-influence-patterns" class="nav-link" data-scroll-target="#intermittent-vs.-gradual-influence-patterns">Intermittent vs.&nbsp;Gradual Influence Patterns</a></li>
+  </ul></li>
+  <li><a href="#centrality-prediction" id="toc-centrality-prediction" class="nav-link" data-scroll-target="#centrality-prediction">4.4 Centrality &amp; Prediction</a>
+  <ul class="collapse">
+  <li><a href="#centrality-measures" id="toc-centrality-measures" class="nav-link" data-scroll-target="#centrality-measures">Centrality Measures</a></li>
+  <li><a href="#defining-a-rising-star" id="toc-defining-a-rising-star" class="nav-link" data-scroll-target="#defining-a-rising-star">Defining a Rising Star</a></li>
+  <li><a href="#rising-star-score" id="toc-rising-star-score" class="nav-link" data-scroll-target="#rising-star-score">Rising Star Score</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#shiny-application-design" id="toc-shiny-application-design" class="nav-link" data-scroll-target="#shiny-application-design">5 Shiny Application Design</a>
+  <ul class="collapse">
+  <li><a href="#shiny-app-1-sailor-shifts-career-explorer" id="toc-shiny-app-1-sailor-shifts-career-explorer" class="nav-link" data-scroll-target="#shiny-app-1-sailor-shifts-career-explorer">Shiny App 1: Sailor Shift’s Career Explorer</a></li>
+  <li><a href="#shiny-app-2-oceanus-folk-influence-tracker" id="toc-shiny-app-2-oceanus-folk-influence-tracker" class="nav-link" data-scroll-target="#shiny-app-2-oceanus-folk-influence-tracker">Shiny App 2: Oceanus Folk Influence Tracker</a></li>
+  <li><a href="#shiny-app-3-rising-star-prediction-dashboard" id="toc-shiny-app-3-rising-star-prediction-dashboard" class="nav-link" data-scroll-target="#shiny-app-3-rising-star-prediction-dashboard">Shiny App 3: Rising Star Prediction Dashboard</a></li>
+  </ul></li>
   <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages">6 R Packages</a></li>
   <li><a href="#prototypes-and-storyboards" id="toc-prototypes-and-storyboards" class="nav-link" data-scroll-target="#prototypes-and-storyboards">7 Prototypes and Storyboards</a></li>
   </ul>
@@ -153,9 +174,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Project Proposal</h1>
+<h1 class="title">From Folk to Fame</h1>
 </div>
 
+<div>
+  <div class="description">
+    Team 10’s Project Proposal
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -165,7 +191,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">June 3, 2025</p>
+      <p class="date-modified">June 6, 2025</p>
     </div>
   </div>
     
@@ -176,11 +202,9 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Sailor Shift and the Rise of Oceanus Folk: An Interactive Network Analysis</p>
 <section id="motivation" class="level1">
 <h1>1 Motivation</h1>
-<p>Oceanus native Sailor Shift has become a global music icon, with her success fueling the spread of Oceanus Folk music far beyond the island nation’s borders. As a result, her musical journey offers a compelling case study in how individual artists can reshape genres and influence entire musical ecosystems.</p>
-<p>To support journalist Silas Reed’s feature Oceanus Folk: Then-and-Now, this project seeks to visualize and analyze Sailor Shift’s career trajectory, collaboration network, and genre impact. The study also examines how Oceanus Folk has evolved through her influence and identifies potential rising stars in the genre.</p>
+<p>In the rapidly evolving music industry, understanding how artists rise to fame and how genres expand their influence is a complex challenge. The story of Sailor Shift, a once-local Oceanus Folk singer who rose to global superstardom, offers a unique opportunity for us to examine this phenomenon. Her career not only redefined what it means to be a successful artist but also played a pivotal role in bringing the Oceanus Folk genre to international prominence.</p>
 </section>
 <section id="objectives" class="level1">
 <h1>2 Objectives</h1>
@@ -197,80 +221,173 @@ ul.task-list li input[type="checkbox"] {
 <h1>3 Dataset Description</h1>
 <p>The data is from <code>MC1_graph.json</code>, a directed multigraph with:</p>
 <p>17,412 nodes and 37,857 edges</p>
-<p>Node types: <code>Person</code>, <code>Song</code>, <code>Album</code>, <code>MusicalGroup</code>, <code>RecordLabel</code></p>
-<p>Edge types: Musical relationships like <code>PerformerOf</code>, <code>ProducerOf</code>, <code>InterpolatesFrom</code>, <code>InStyleOf</code>, <code>CoverOf</code>,<code>MemberOf</code>, <code>ComposerOf</code>,<code>LyricistOf</code>,<code>LyricalReferenceTo</code>, <code>DirectlySamples</code>, <code>RecordedBy</code>, <code>DistributedBy</code></p>
-<p>Attributes of interest:</p>
-<p>Songs and Albums: genre, release date, notable, notoriety date</p>
-<p>Persons: name, stage name</p>
-<p>Edges: influence and collaboration types between nodes</p>
+<p><strong>Node types</strong>: <code>Person</code>, <code>Song</code>, <code>Album</code>, <code>MusicalGroup</code>, <code>RecordLabel</code></p>
+<p><strong>Edge types</strong>: <code>PerformerOf</code>, <code>ProducerOf</code>, <code>InterpolatesFrom</code>, <code>InStyleOf</code>, <code>CoverOf</code>,<code>MemberOf</code>, <code>ComposerOf</code>,<code>LyricistOf</code>,<code>LyricalReferenceTo</code>, <code>DirectlySamples</code>, <code>RecordedBy</code>, <code>DistributedBy</code></p>
+<p>Attributes of Interest:</p>
+<p><strong>Songs and Albums</strong>: genre, release date, notable, notoriety date</p>
+<p><strong>Persons</strong>: name, stage name</p>
+<p><strong>Edges</strong>: influence and collaboration types between nodes</p>
 </section>
 <section id="methodology" class="level1">
-<h1>4 methodology</h1>
+<h1>4 Methodology</h1>
 <section id="data-wrangling" class="level2">
 <h2 class="anchored" data-anchor-id="data-wrangling">4.1 Data Wrangling</h2>
-<p>Load the JSON graph using networkx::node_link_graph() or tidygraph in R</p>
-<p>Normalize and clean node attributes (e.g., missing stage names, convert dates)</p>
-<p>Categorize edge types into:</p>
-<p>Influence edges: DirectlySamples, CoverOf, InStyleOf, etc.</p>
-<p>Collaboration edges: PerformerOf, ProducerOf, MemberOf, etc.</p>
+<section id="load-the-json-graph" class="level3">
+<h3 class="anchored" data-anchor-id="load-the-json-graph">Load the JSON graph</h3>
+<p>data &lt;- fromJSON(“data/MC1_graph.json”)</p>
+</section>
+<section id="standardize-and-clean-node-attributes" class="level3">
+<h3 class="anchored" data-anchor-id="standardize-and-clean-node-attributes">Standardize and Clean Node Attributes</h3>
+<ul>
+<li><p>Handling missing values (e.g., stage names or display names)</p></li>
+<li><p>Convert date fields to a consistent and usable format</p></li>
+</ul>
+</section>
+<section id="categorize-edge-types" class="level3">
+<h3 class="anchored" data-anchor-id="categorize-edge-types">Categorize Edge Types</h3>
+<p>Our team has agreed to group the relationships into the following categories:</p>
+<ul>
+<li><p><strong>Influence Edges</strong>: These include relationships that reflect stylistic or creative influence, such as <code>DirectlySamples</code>, <code>CoverOf</code>, <code>InStyleOf</code>, and related types.</p></li>
+<li><p><strong>Collaboration Edges</strong>: These refer to instances where artists work together on music-related projects, including roles like <code>PerformerOf</code>, <code>ProducerOf</code>, <code>MemberOf</code>, and others.</p></li>
+</ul>
+</section>
 </section>
 <section id="network-construction" class="level2">
 <h2 class="anchored" data-anchor-id="network-construction">4.2 Network Construction</h2>
-<p>Build full music influence/collaboration graph</p>
-<p>Extract ego networks for Sailor Shift</p>
-<p>Filter by time window and depth (1st–3rd degree)</p>
+<section id="full-graph-construction" class="level3">
+<h3 class="anchored" data-anchor-id="full-graph-construction">Full Graph Construction</h3>
+<p>We combined all available relationship types to build a full network that reflects the interconnected nature of the music industry.</p>
+</section>
+<section id="ego-network-extraction" class="level3">
+<h3 class="anchored" data-anchor-id="ego-network-extraction">Ego Network Extraction</h3>
+<p>To focus on Sailor Shift’s direct and indirect connections, we extracted <strong>ego networks</strong> centered on her node.</p>
+<ul>
+<li><strong>1st-degree connections</strong>: direct collaborators or influences</li>
+<li><strong>2nd- and 3rd-degree connections</strong>: indirect relationships (e.g., collaborators of collaborators)</li>
+</ul>
+</section>
 </section>
 <section id="temporal-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="temporal-analysis">4.3 Temporal Analysis</h2>
-<p>Use <code>release_date</code>, <code>notoriety_date</code>, <code>written_date</code> to generate year-based snapshots</p>
-<p>Track genre diffusion via temporal network visualizations</p>
-<p>Analyze intermittent and gradual influence patterns</p>
+<section id="time-based-snapshots" class="level3">
+<h3 class="anchored" data-anchor-id="time-based-snapshots">Time-Based Snapshots</h3>
+<p>To understand how influence and collaboration evolve over time, we plan to conduct a temporal analysis using key timestamp attributes in the dataset:</p>
+<ul>
+<li><code>release_date</code>: when a song or album was publicly released</li>
+<li><code>written_date</code>: when a work was originally created or composed</li>
+<li><code>notoriety_date</code>: when an artist or work began to gain significant attention</li>
+</ul>
+</section>
+<section id="genre-diffusion-tracking" class="level3">
+<h3 class="anchored" data-anchor-id="genre-diffusion-tracking">Genre Diffusion Tracking</h3>
+<ul>
+<li>New collaborations and influences forming</li>
+<li>The growth of artist networks</li>
+</ul>
+</section>
+<section id="intermittent-vs.-gradual-influence-patterns" class="level3">
+<h3 class="anchored" data-anchor-id="intermittent-vs.-gradual-influence-patterns">Intermittent vs.&nbsp;Gradual Influence Patterns</h3>
+<p>We analyzed the <strong>frequency and consistency of influence relationships</strong> across time to distinguish between:</p>
+<ul>
+<li><strong>Intermittent influence</strong>: sharp, isolated bursts of impact (e.g., viral song)</li>
+<li><strong>Gradual influence</strong>: steady and persistent growth in artistic reach or style adoption</li>
+</ul>
+</section>
 </section>
 <section id="centrality-prediction" class="level2">
 <h2 class="anchored" data-anchor-id="centrality-prediction">4.4 Centrality &amp; Prediction</h2>
-<p>Compute PageRank, Betweenness, Degree</p>
-<p>Normalize across years to compare popularity/influence</p>
+<p>To identify key figures and forecast potential breakout artists, we computed centrality metrics on the constructed network:</p>
+<section id="centrality-measures" class="level3">
+<h3 class="anchored" data-anchor-id="centrality-measures">Centrality Measures</h3>
+<p>We focused on the following network centrality indicators:</p>
+<ul>
+<li><strong>Degree Centrality</strong>: measures the number of direct connections an artist has, indicating collaboration frequency or direct influence.</li>
+<li><strong>Betweenness Centrality</strong>: quantifies how often an artist acts as a bridge in the network, highlighting their role in connecting different groups or genres.</li>
+<li><strong>PageRank</strong>: reflects both the number and quality of connections, emphasizing artists who are connected to other influential nodes.</li>
+</ul>
+</section>
+<section id="defining-a-rising-star" class="level3">
+<h3 class="anchored" data-anchor-id="defining-a-rising-star">Defining a Rising Star</h3>
+<p>The prediction model goes beyond measuring popularity alone. It captures a multi-dimensional view of artistic potential by evaluating the following core components:</p>
+<ul>
+<li><p><strong>Creative Activity</strong><br>
+Regular releases suggest momentum and consistency.</p></li>
+<li><p><strong>Creative Contribution</strong><br>
+Artists who engage in composition, production, or lyrics.</p></li>
+<li><p><strong>Collaboration</strong><br>
+Any other person who is connected to the same song(s) as the artist via a creative roles.</p></li>
+<li><p><strong>Public Recognition</strong><br>
+While not the only sign of influence, chart performance remains a strong indicator of public recognition.</p></li>
+</ul>
+</section>
+<section id="rising-star-score" class="level3">
+<h3 class="anchored" data-anchor-id="rising-star-score">Rising Star Score</h3>
+<p>We designed a composite <strong>Rising Star Score</strong> to quantify future potential. It includes the following weighted components:</p>
+<ul>
+<li><p><strong>Total Works</strong><br>
+Reflects productivity and output volume.</p></li>
+<li><p><strong>Charted Ratio</strong> <em>(highly weighted)</em><br>
+Measures public recognition; greater weight emphasizes impact over quantity.</p></li>
+<li><p><strong>Collaboration Count</strong><br>
+Indicates the artist’s engagement in the music community.</p></li>
+<li><p><strong>Creative Contributions</strong><br>
+Captures behind-the-scenes roles (e.g., producer, lyricist, composer).</p></li>
+<li><p><strong>Freshness Adjustment</strong><br>
+Penalizes artists who have not released new work recently, even if they debuted early.</p></li>
+</ul>
+</section>
 </section>
 </section>
 <section id="shiny-application-design" class="level1">
 <h1>5 Shiny Application Design</h1>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 36%">
-<col style="width: 63%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Sub-graphs</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>1. Sailor Shift’s Network</strong></td>
-<td>Visualize Sailor’s influence and collaborations with year &amp; depth sliders</td>
-</tr>
-<tr class="even">
-<td><strong>2. Oceanus Folk Spread</strong></td>
-<td>Show genre diffusion over time and by edge type</td>
-</tr>
-<tr class="odd">
-<td><strong>3. Artist Career Comparison</strong></td>
-<td>Select and compare 3 artists on centrality and release activity</td>
-</tr>
-<tr class="even">
-<td><strong>4. Future Oceanus Folk Stars</strong></td>
-<td>List &amp; plot predicted future stars by score and network features</td>
-</tr>
-</tbody>
-</table>
+<p>To support interactive exploration and analysis, we propose three Shiny applications.</p>
+<hr>
+<section id="shiny-app-1-sailor-shifts-career-explorer" class="level3">
+<h3 class="anchored" data-anchor-id="shiny-app-1-sailor-shifts-career-explorer">Shiny App 1: Sailor Shift’s Career Explorer</h3>
+<p>This app allows users to trace Sailor Shift’s artistic journey through interactive visualizations.</p>
+<p><strong>Core Features:</strong></p>
+<ul>
+<li><p>Timeline of album/single releases</p></li>
+<li><p>Network of collaborations</p></li>
+<li><p>Genre evolution over time</p></li>
+</ul>
+<p><strong>Purpose:</strong><br>
+Understand key turning points in Sailor’s career and her expanding network of creative connections.</p>
+<hr>
+</section>
+<section id="shiny-app-2-oceanus-folk-influence-tracker" class="level3">
+<h3 class="anchored" data-anchor-id="shiny-app-2-oceanus-folk-influence-tracker">Shiny App 2: Oceanus Folk Influence Tracker</h3>
+<p>This app focuses on how the Oceanus Folk genre has spread over time and impacted other artists and styles.</p>
+<p><strong>Core Features:</strong></p>
+<ul>
+<li><p>Temporal influence network</p></li>
+<li><p>Genre diffusion visualizations</p></li>
+<li><p>Cross-genre influence analysis</p></li>
+</ul>
+<p><strong>Purpose:</strong><br>
+Track the global rise of Oceanus Folk and identify artists and genres influenced by it.</p>
+<hr>
+</section>
+<section id="shiny-app-3-rising-star-prediction-dashboard" class="level3">
+<h3 class="anchored" data-anchor-id="shiny-app-3-rising-star-prediction-dashboard">Shiny App 3: Rising Star Prediction Dashboard</h3>
+<p>This app predicts future breakout artists by analyzing multiple career-related metrics.</p>
+<p><strong>Core Features:</strong></p>
+<ul>
+<li><p>Rising Star Score calculation</p></li>
+<li><p>Comparison of artist trajectories</p></li>
+<li><p>Filters by genre, debut year, or charted songs</p></li>
+</ul>
+<p><strong>Purpose:</strong><br>
+Define what makes a rising star and forecast which Oceanus Folk artists are likely to break out next.</p>
+<hr>
+</section>
 </section>
 <section id="r-packages" class="level1">
 <h1>6 R Packages</h1>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 36%">
-<col style="width: 63%">
+<col style="width: 37%">
+<col style="width: 62%">
 </colgroup>
 <thead>
 <tr class="header">

@@ -1,5 +1,6 @@
 ---
-title: "Project Proposal"
+title: "From Folk to Fame"
+description: "Team 10's Project Proposal"
 date-modified: "last-modified"
 execute:
   echo: true
@@ -9,13 +10,9 @@ execute:
 body-classes: others
 ---
 
-Sailor Shift and the Rise of Oceanus Folk: An Interactive Network Analysis
-
 # 1 Motivation
 
-Oceanus native Sailor Shift has become a global music icon, with her success fueling the spread of Oceanus Folk music far beyond the island nation’s borders. As a result, her musical journey offers a compelling case study in how individual artists can reshape genres and influence entire musical ecosystems.
-
-To support journalist Silas Reed’s feature Oceanus Folk: Then-and-Now, this project seeks to visualize and analyze Sailor Shift’s career trajectory, collaboration network, and genre impact. The study also examines how Oceanus Folk has evolved through her influence and identifies potential rising stars in the genre.
+In the rapidly evolving music industry, understanding how artists rise to fame and how genres expand their influence is a complex challenge. The story of Sailor Shift, a once-local Oceanus Folk singer who rose to global superstardom, offers a unique opportunity for us to examine this phenomenon. Her career not only redefined what it means to be a successful artist but also played a pivotal role in bringing the Oceanus Folk genre to international prominence.
 
 # 2 Objectives
 
@@ -37,67 +34,183 @@ The data is from `MC1_graph.json`, a directed multigraph with:
 
 17,412 nodes and 37,857 edges
 
-Node types: `Person`, `Song`, `Album`, `MusicalGroup`, `RecordLabel`
+**Node types**: `Person`, `Song`, `Album`, `MusicalGroup`, `RecordLabel`
 
-Edge types: Musical relationships like `PerformerOf`, `ProducerOf`, `InterpolatesFrom`, `InStyleOf`, `CoverOf`,`MemberOf`, `ComposerOf`,`LyricistOf`,`LyricalReferenceTo`, `DirectlySamples`, `RecordedBy`, `DistributedBy`
+**Edge types**: `PerformerOf`, `ProducerOf`, `InterpolatesFrom`, `InStyleOf`, `CoverOf`,`MemberOf`, `ComposerOf`,`LyricistOf`,`LyricalReferenceTo`, `DirectlySamples`, `RecordedBy`, `DistributedBy`
 
-Attributes of interest:
+Attributes of Interest:
 
-Songs and Albums: genre, release date, notable, notoriety date
+**Songs and Albums**: genre, release date, notable, notoriety date
 
-Persons: name, stage name
+**Persons**: name, stage name
 
-Edges: influence and collaboration types between nodes
+**Edges**: influence and collaboration types between nodes
 
-# 4 methodology
+# 4 Methodology
 
 ## 4.1 Data Wrangling
 
-Load the JSON graph using networkx::node_link_graph() or tidygraph in R
+### Load the JSON graph
 
-Normalize and clean node attributes (e.g., missing stage names, convert dates)
+data \<- fromJSON("data/MC1_graph.json")
 
-Categorize edge types into:
+### Standardize and Clean Node Attributes
 
-Influence edges: DirectlySamples, CoverOf, InStyleOf, etc.
+-   Handling missing values (e.g., stage names or display names)
 
-Collaboration edges: PerformerOf, ProducerOf, MemberOf, etc.
+-   Convert date fields to a consistent and usable format
+
+### Categorize Edge Types
+
+Our team has agreed to group the relationships into the following categories:
+
+-   **Influence Edges**: These include relationships that reflect stylistic or creative influence, such as `DirectlySamples`, `CoverOf`, `InStyleOf`, and related types.
+
+-   **Collaboration Edges**: These refer to instances where artists work together on music-related projects, including roles like `PerformerOf`, `ProducerOf`, `MemberOf`, and others.
 
 ## 4.2 Network Construction
 
-Build full music influence/collaboration graph
+### Full Graph Construction
 
-Extract ego networks for Sailor Shift
+We combined all available relationship types to build a full network that reflects the interconnected nature of the music industry.
 
-Filter by time window and depth (1st–3rd degree)
+### Ego Network Extraction
+
+To focus on Sailor Shift’s direct and indirect connections, we extracted **ego networks** centered on her node.
+
+-   **1st-degree connections**: direct collaborators or influences
+-   **2nd- and 3rd-degree connections**: indirect relationships (e.g., collaborators of collaborators)
 
 ## 4.3 Temporal Analysis
 
-Use `release_date`, `notoriety_date`, `written_date` to generate year-based snapshots
+### Time-Based Snapshots
 
-Track genre diffusion via temporal network visualizations
+To understand how influence and collaboration evolve over time, we plan to conduct a temporal analysis using key timestamp attributes in the dataset:
 
-Analyze intermittent and gradual influence patterns
+-   `release_date`: when a song or album was publicly released
+-   `written_date`: when a work was originally created or composed
+-   `notoriety_date`: when an artist or work began to gain significant attention
+
+### Genre Diffusion Tracking
+
+-   New collaborations and influences forming
+-   The growth of artist networks
+
+### Intermittent vs. Gradual Influence Patterns
+
+We analyzed the **frequency and consistency of influence relationships** across time to distinguish between:
+
+-   **Intermittent influence**: sharp, isolated bursts of impact (e.g., viral song)
+-   **Gradual influence**: steady and persistent growth in artistic reach or style adoption
 
 ## 4.4 Centrality & Prediction
 
-Compute PageRank, Betweenness, Degree
+To identify key figures and forecast potential breakout artists, we computed centrality metrics on the constructed network:
 
-Normalize across years to compare popularity/influence
+### Centrality Measures
+
+We focused on the following network centrality indicators:
+
+-   **Degree Centrality**: measures the number of direct connections an artist has, indicating collaboration frequency or direct influence.
+-   **Betweenness Centrality**: quantifies how often an artist acts as a bridge in the network, highlighting their role in connecting different groups or genres.
+-   **PageRank**: reflects both the number and quality of connections, emphasizing artists who are connected to other influential nodes.
+
+### Defining a Rising Star
+
+The prediction model goes beyond measuring popularity alone. It captures a multi-dimensional view of artistic potential by evaluating the following core components:
+
+-   **Creative Activity**\
+    Regular releases suggest momentum and consistency.
+
+-   **Creative Contribution**\
+    Artists who engage in composition, production, or lyrics.
+
+-   **Collaboration**\
+    Any other person who is connected to the same song(s) as the artist via a creative roles.
+
+-   **Public Recognition**\
+    While not the only sign of influence, chart performance remains a strong indicator of public recognition.
+
+### Rising Star Score
+
+We designed a composite **Rising Star Score** to quantify future potential. It includes the following weighted components:
+
+-   **Total Works**\
+    Reflects productivity and output volume.
+
+-   **Charted Ratio** *(highly weighted)*\
+    Measures public recognition; greater weight emphasizes impact over quantity.
+
+-   **Collaboration Count**\
+    Indicates the artist's engagement in the music community.
+
+-   **Creative Contributions**\
+    Captures behind-the-scenes roles (e.g., producer, lyricist, composer).
+
+-   **Freshness Adjustment**\
+    Penalizes artists who have not released new work recently, even if they debuted early.
 
 # 5 Shiny Application Design
 
-| Sub-graphs | Description |
-|--------------------------|---------------------------------------------|
-| **1. Sailor Shift’s Network** | Visualize Sailor’s influence and collaborations with year & depth sliders |
-| **2. Oceanus Folk Spread** | Show genre diffusion over time and by edge type |
-| **3. Artist Career Comparison** | Select and compare 3 artists on centrality and release activity |
-| **4. Future Oceanus Folk Stars** | List & plot predicted future stars by score and network features |
+To support interactive exploration and analysis, we propose three Shiny applications.
+
+------------------------------------------------------------------------
+
+### Shiny App 1: Sailor Shift’s Career Explorer
+
+This app allows users to trace Sailor Shift’s artistic journey through interactive visualizations.
+
+**Core Features:**
+
+-   Timeline of album/single releases
+
+-   Network of collaborations
+
+-   Genre evolution over time
+
+**Purpose:**\
+Understand key turning points in Sailor's career and her expanding network of creative connections.
+
+------------------------------------------------------------------------
+
+### Shiny App 2: Oceanus Folk Influence Tracker
+
+This app focuses on how the Oceanus Folk genre has spread over time and impacted other artists and styles.
+
+**Core Features:**
+
+-   Temporal influence network
+
+-   Genre diffusion visualizations
+
+-   Cross-genre influence analysis
+
+**Purpose:**\
+Track the global rise of Oceanus Folk and identify artists and genres influenced by it.
+
+------------------------------------------------------------------------
+
+### Shiny App 3: Rising Star Prediction Dashboard
+
+This app predicts future breakout artists by analyzing multiple career-related metrics.
+
+**Core Features:**
+
+-   Rising Star Score calculation
+
+-   Comparison of artist trajectories
+
+-   Filters by genre, debut year, or charted songs
+
+**Purpose:**\
+Define what makes a rising star and forecast which Oceanus Folk artists are likely to break out next.
+
+------------------------------------------------------------------------
 
 # 6 R Packages
 
 | Package | Description |
-|--------------------------|---------------------------------------------|
+|---------------------------|---------------------------------------------|
 | **tidyverse** | For data wrangling (`dplyr`, `ggplot2`, `tibble`) |
 | **jsonlite** | To parse the `MC1_graph.json` file |
 | **lubridate** | For handling and filtering date fields like `release_date` and `notoriety_date` |

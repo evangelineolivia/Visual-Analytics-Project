@@ -9,15 +9,15 @@ body-classes: homepage
 
 ::::::: container
 ::: {#text-left .text .text-left}
-Oceanus
+Folk
 :::
 
 ::: {#text-right .text .text-right}
-Stars
+Fame
 :::
 
 ::: {#combined .text}
-Oceanus Stars
+From Falk to Fame
 :::
 
 ::: {#after .mini}

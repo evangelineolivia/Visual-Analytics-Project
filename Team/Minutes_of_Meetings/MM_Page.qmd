@@ -10,4 +10,3 @@ format:
     page-layout: article
 body-classes: others
 ---
-

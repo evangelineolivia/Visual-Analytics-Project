@@ -35,7 +35,7 @@ body.others {
 .text {
   font-size: 8vw;
   font-weight: bold;
-  color: black;
+  color: #123456;
   position: absolute;
   animation-duration: 2s;
   animation-timing-function: ease-in-out;
