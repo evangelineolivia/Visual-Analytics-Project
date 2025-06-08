@@ -60,7 +60,7 @@
     "href": "Team/Project_Proposal.html#temporal-analysis",
     "title": "From Folk to Fame",
     "section": "4.3 Temporal Analysis",
-    "text": "4.3 Temporal Analysis\n\n4.3.1 Time-Based Snapshots\nTo understand how influence and collaboration evolve over time, we plan to conduct a temporal analysis using key timestamp attributes in the dataset:\n\nrelease_date: when a song or album was publicly released\nwritten_date: when a work was originally created or composed\nnotoriety_date: when an artist or work began to gain significant attention\n\n\n\n4.3.2 Genre Diffusion Tracking\n\nNew collaborations and influences forming\nThe growth of artist networks\n\n\n\n4.3.3 Intermittent vs. Gradual Influence Patterns\nWe analyzed the frequency and consistency of influence relationships across time to distinguish between:\n\nIntermittent influence: sharp, isolated bursts of impact (e.g., viral song)\nGradual influence: steady and persistent growth in artistic reach or style adoption"
+    "text": "4.3 Temporal Analysis\n\n4.3.1 Time-Based Snapshots\nTo understand how influence and collaboration evolve over time, we plan to conduct a temporal analysis using key timestamp attributes in the dataset:\n\nrelease_date: when a song or album was publicly released\nwritten_date: when a work was originally created or composed\nnotoriety_date: when an artist or work began to gain significant attention\n\n\n\n4.3.2 Genre Diffusion Tracking\nIn this part our focus is to track how the Oceanus Folk genre expanded over time by analyzing:\n\nNew collaborations between artists,\nEmerging influence patterns, and\nThe evolving structure of the overall artist network.\n\n\n\n4.3.3 Intermittent vs. Gradual Influence Patterns\nWe analyzed the frequency and consistency of influence spread across time within the Oceanus Folk genre. Specifically, we aim to distinguish between:\n\nIntermittent influence: sharp, isolated bursts of impact (e.g., viral song)\n\nThis propose us to oversee if there is a spike in release or influence within period of time, while also trying to find a node with few edges, but strong centrality within a short time window.\n\nGradual influence: steady and persistent growth in artistic reach or style adoption\n\nThis propose us to oversee if there is a nodes with increasing degree or betweenness over multiple years"
   },
   {
     "objectID": "Team/Project_Proposal.html#centrality-prediction",
@@ -68,5 +68,26 @@
     "title": "From Folk to Fame",
     "section": "4.4 Centrality & Prediction",
     "text": "4.4 Centrality & Prediction\nTo identify key figures and forecast potential breakout artists, we computed centrality metrics on the constructed network:\n\n4.4.1 Centrality Measures\nWe focused on the following network centrality indicators:\n\nDegree Centrality: measures the number of direct connections an artist has, indicating collaboration frequency or direct influence.\nBetweenness Centrality: quantifies how often an artist acts as a bridge in the network, highlighting their role in connecting different groups or genres.\nPageRank: reflects both the number and quality of connections, emphasizing artists who are connected to other influential nodes.\n\n\n\n4.4.2 Defining a Rising Star\nThe prediction model goes beyond measuring popularity alone. It captures a multi-dimensional view of artistic potential by evaluating the following core components:\n\nCreative Activity\nRegular releases suggest momentum and consistency.\nCreative Contribution\nArtists who engage in composition, production, or lyrics.\nCollaboration\nAny other person who is connected to the same song(s) as the artist via a creative roles.\nPublic Recognition\nWhile not the only sign of influence, chart performance remains a strong indicator of public recognition.\n\n\n\n4.4.3 Rising Star Score\nWe designed a composite Rising Star Score to quantify future potential. It includes the following weighted components:\n\nTotal Works\nReflects productivity and output volume.\nCharted Ratio (highly weighted)\nMeasures public recognition; greater weight emphasizes impact over quantity.\nCollaboration Count\nIndicates the artist’s engagement in the music community.\nCreative Contributions\nCaptures behind-the-scenes roles (e.g., producer, lyricist, composer).\nFreshness Adjustment\nPenalizes artists who have not released new work recently, even if they debuted early."
+  },
+  {
+    "objectID": "Team/Project_Proposal.html#shiny-app-1-sailor-shifts-career-explorer",
+    "href": "Team/Project_Proposal.html#shiny-app-1-sailor-shifts-career-explorer",
+    "title": "From Folk to Fame",
+    "section": "5.1 Shiny App 1: Sailor Shift’s Career Explorer",
+    "text": "5.1 Shiny App 1: Sailor Shift’s Career Explorer\nThis app allows users to trace Sailor Shift’s artistic journey through interactive visualizations.\nCore Features:\n\nTimeline of album/single releases\nNetwork of collaborations\nGenre evolution over time\n\nPurpose:\nUnderstand key turning points in Sailor’s career and her expanding network of creative connections."
+  },
+  {
+    "objectID": "Team/Project_Proposal.html#shiny-app-2-oceanus-folk-influence-tracker",
+    "href": "Team/Project_Proposal.html#shiny-app-2-oceanus-folk-influence-tracker",
+    "title": "From Folk to Fame",
+    "section": "5.2 Shiny App 2: Oceanus Folk Influence Tracker",
+    "text": "5.2 Shiny App 2: Oceanus Folk Influence Tracker\nThis app focuses on how the Oceanus Folk genre has spread over time and impacted other artists and styles.\nCore Features:\n\nTemporal influence network\nGenre diffusion visualizations\nCross-genre influence analysis\n\nPurpose: Track the global rise of Oceanus Folk and identify artists and genres influenced by it."
+  },
+  {
+    "objectID": "Team/Project_Proposal.html#shiny-app-3-rising-star-prediction-dashboard",
+    "href": "Team/Project_Proposal.html#shiny-app-3-rising-star-prediction-dashboard",
+    "title": "From Folk to Fame",
+    "section": "5.3 Shiny App 3: Rising Star Prediction Dashboard",
+    "text": "5.3 Shiny App 3: Rising Star Prediction Dashboard\nThis app predicts future breakout artists by analyzing multiple career-related metrics.\nCore Features:\n\nRising Star Score calculation\nComparison of artist trajectories\nFilters by genre, debut year, or charted songs\n\nPurpose:\nDefine what makes a rising star and forecast which Oceanus Folk artists are likely to break out next."
   }
 ]

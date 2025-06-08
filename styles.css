@@ -1,18 +1,27 @@
 /* css styles */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap');
+
 body.homepage {
   background: linear-gradient(85deg, #AFC3D3, #E3F2FA);
   background-size: 200% 200%;
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  font-family: Georgia, Sans-Serif;
+  font-family: 'Comfortaa', sans-serif;
   justify-content: center;
   align-items: center;
 }
 
+strong, b {
+  color: #D35D6E; !important;
+  font-weight: 900 !important; /* or try 900 for maximum boldness */
+}
+
 body.others {
-  background: #e6f0f8;
-  font-family: Georgia, Sans-Serif;
+  font-size: 14px;
+  line-height: 1.6;
+  background: #fff;
+  font-family: 'Comfortaa', sans-serif;
   color: black !important;
 }
 
@@ -134,9 +143,11 @@ body.others .navbar {
   padding-top: 1.2rem;
   padding-bottom: 1.2rem;
   min-height: 70px;
+  font-family: 'Comfortaa', sans-serif;
 }
 
 .navbar {
+  font-family: 'Comfortaa', sans-serif;
   background-color:"transparent";
   color: white;
   padding-top: 1.2rem;
@@ -147,12 +158,14 @@ body.others .navbar {
 .navbar .nav-link,
 .navbar-brand,
 .navbar .dropdown-toggle {
+  font-family: 'Comfortaa', sans-serif;
   font-size: 1.2rem;
   font-weight: bold;
 }
 
 .navbar .nav-link:hover,
 .navbar .dropdown-toggle:hover {
+  font-family: 'Comfortaa', sans-serif;
   color: #123456 !important;
   font-weight: bold;
 }
@@ -163,15 +176,17 @@ body.others .navbar {
 }
 
 .dropdown-menu {
+  font-family: 'Comfortaa', sans-serif;
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   padding: 0.5rem 0;
 }
 
 .dropdown-menu .dropdown-item {
+  font-family: 'Comfortaa', sans-serif;
+  font-weight: bold;
   padding: 0.5rem 1.2rem;
   border-radius: 8px;
-  font-family: Georgia, serif;
   font-size: 1rem;
   color: #123456;
   transition: background-color 0.2s ease, color 0.2s ease;
@@ -192,6 +207,14 @@ body.others .navbar {
   color: #123456; 
 }
 
+.navbar .nav-link.active,
+.navbar .nav-link:focus,
+.navbar .nav-item.active .nav-link {
+  font-family: 'Comfortaa', sans-serif;
+  color: #123456 !important;
+  font-weight: bold;
+}
+
 
 table.quarto-listing-table a:hover {
   color: #0D3B66 !important; /* Darker on hover */
@@ -200,5 +223,19 @@ table.quarto-listing-table a:hover {
 
 
 h1, h2, h3, h4, h5, h6 {
-  color: #123456;  /* Replace with your desired color */
+  font-family: 'Comfortaa', sans-serif;
+  font-weight: 1000;
+  color: #123456;
+}
+
+.spacer {
+  height: 1rem;
+}
+
+code {
+  color: #0D3B66; /* Bright blue */
+  background-color: #fff; /* Light blue background */
+  font-weight: 800;
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
 }

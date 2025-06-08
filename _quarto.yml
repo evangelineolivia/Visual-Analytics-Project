@@ -8,17 +8,16 @@ website:
     background: "transparent"
     foreground: "#ffff"
     right:
-      # - href: about.qmd
-      #   text: "Overview"
-        
+      - text: "Proposal"
+        href: Team/Project_Proposal.qmd
       - text: "Prototype"
         menu:
           - text : " "
       
       - text: "Team"
         menu:
-          - text: "Project Proposal"
-            href: Team/Project_Proposal.html
+          - href: about.qmd
+            text: "About Us"
           - text: "Minutes of Meetings" 
             href: Team/Minutes_of_Meetings/MM_Page.html
   page-footer: 

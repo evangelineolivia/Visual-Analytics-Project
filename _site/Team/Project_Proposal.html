@@ -89,6 +89,10 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../Team/Project_Proposal.html" aria-current="page"> 
+<span class="menu-text">Proposal</span></a>
+  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-prototype" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Prototype</span>
@@ -104,8 +108,8 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-team">    
         <li>
-    <a class="dropdown-item" href="../Team/Project_Proposal.html">
- <span class="dropdown-text">Project Proposal</span></a>
+    <a class="dropdown-item" href="../about.html">
+ <span class="dropdown-text">About Us</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../Team/Minutes_of_Meetings/MM_Page.html">
@@ -160,9 +164,9 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#shiny-application-design" id="toc-shiny-application-design" class="nav-link" data-scroll-target="#shiny-application-design"><span class="header-section-number">5</span> Shiny Application Design</a>
   <ul class="collapse">
-  <li><a href="#shiny-app-1-sailor-shifts-career-explorer" id="toc-shiny-app-1-sailor-shifts-career-explorer" class="nav-link" data-scroll-target="#shiny-app-1-sailor-shifts-career-explorer"><span class="header-section-number">5.0.1</span> Shiny App 1: Sailor Shift’s Career Explorer</a></li>
-  <li><a href="#shiny-app-2-oceanus-folk-influence-tracker" id="toc-shiny-app-2-oceanus-folk-influence-tracker" class="nav-link" data-scroll-target="#shiny-app-2-oceanus-folk-influence-tracker"><span class="header-section-number">5.0.2</span> Shiny App 2: Oceanus Folk Influence Tracker</a></li>
-  <li><a href="#shiny-app-3-rising-star-prediction-dashboard" id="toc-shiny-app-3-rising-star-prediction-dashboard" class="nav-link" data-scroll-target="#shiny-app-3-rising-star-prediction-dashboard"><span class="header-section-number">5.0.3</span> Shiny App 3: Rising Star Prediction Dashboard</a></li>
+  <li><a href="#shiny-app-1-sailor-shifts-career-explorer" id="toc-shiny-app-1-sailor-shifts-career-explorer" class="nav-link" data-scroll-target="#shiny-app-1-sailor-shifts-career-explorer"><span class="header-section-number">5.1</span> Shiny App 1: Sailor Shift’s Career Explorer</a></li>
+  <li><a href="#shiny-app-2-oceanus-folk-influence-tracker" id="toc-shiny-app-2-oceanus-folk-influence-tracker" class="nav-link" data-scroll-target="#shiny-app-2-oceanus-folk-influence-tracker"><span class="header-section-number">5.2</span> Shiny App 2: Oceanus Folk Influence Tracker</a></li>
+  <li><a href="#shiny-app-3-rising-star-prediction-dashboard" id="toc-shiny-app-3-rising-star-prediction-dashboard" class="nav-link" data-scroll-target="#shiny-app-3-rising-star-prediction-dashboard"><span class="header-section-number">5.3</span> Shiny App 3: Rising Star Prediction Dashboard</a></li>
   </ul></li>
   <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages"><span class="header-section-number">6</span> R Packages</a></li>
   <li><a href="#prototypes-and-storyboards" id="toc-prototypes-and-storyboards" class="nav-link" data-scroll-target="#prototypes-and-storyboards"><span class="header-section-number">7</span> Prototypes and Storyboards</a></li>
@@ -188,12 +192,6 @@ ul.task-list li input[type="checkbox"] {
 
     
   
-    <div>
-    <div class="quarto-title-meta-heading">Modified</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date-modified">June 6, 2025</p>
-    </div>
-  </div>
     
   </div>
   
@@ -210,11 +208,11 @@ ul.task-list li input[type="checkbox"] {
 <h1 data-number="2"><span class="header-section-number">2</span> Objectives</h1>
 <p>This project aims to build a Shiny web application that enables users to explore and interpret the following:</p>
 <ul>
-<li><p>Sailor Shift’s influence: Who influenced her and whom she has influenced directly or indirectly</p></li>
-<li><p>Collaboration patterns: Which artists and genres have been shaped through her work</p></li>
-<li><p>Genre evolution: How Oceanus Folk has spread and changed over time</p></li>
-<li><p>Artist comparison: Explore the career trajectories of multiple artists in parallel</p></li>
-<li><p>Rising star prediction: Identify up-and-coming Oceanus Folk artists using network centrality and activity measures</p></li>
+<li><p><strong>Sailor Shift’s influence</strong>: Who influenced her and whom she has influenced directly or indirectly</p></li>
+<li><p><strong>Collaboration patterns</strong>: Which artists and genres have been shaped through her work</p></li>
+<li><p><strong>Genre evolution</strong>: How Oceanus Folk has spread and changed over time</p></li>
+<li><p><strong>Artist comparison</strong>: Explore the career trajectories of multiple artists in parallel</p></li>
+<li><p><strong>Rising star prediction</strong>: Identify up-and-coming Oceanus Folk artists using network centrality and activity measures</p></li>
 </ul>
 </section>
 <section id="dataset-description" class="level1" data-number="3">
@@ -223,10 +221,21 @@ ul.task-list li input[type="checkbox"] {
 <p>17,412 nodes and 37,857 edges</p>
 <p><strong>Node types</strong>: <code>Person</code>, <code>Song</code>, <code>Album</code>, <code>MusicalGroup</code>, <code>RecordLabel</code></p>
 <p><strong>Edge types</strong>: <code>PerformerOf</code>, <code>ProducerOf</code>, <code>InterpolatesFrom</code>, <code>InStyleOf</code>, <code>CoverOf</code>,<code>MemberOf</code>, <code>ComposerOf</code>,<code>LyricistOf</code>,<code>LyricalReferenceTo</code>, <code>DirectlySamples</code>, <code>RecordedBy</code>, <code>DistributedBy</code></p>
-<p>Attributes of Interest:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>Attributes of Interest:</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><strong>Songs and Albums</strong>: genre, release date, notable, notoriety date</p>
 <p><strong>Persons</strong>: name, stage name</p>
 <p><strong>Edges</strong>: influence and collaboration types between nodes</p>
+</div>
+</div>
 </section>
 <section id="methodology" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Methodology</h1>
@@ -280,18 +289,24 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="genre-diffusion-tracking" class="level3" data-number="4.3.2">
 <h3 data-number="4.3.2" class="anchored" data-anchor-id="genre-diffusion-tracking"><span class="header-section-number">4.3.2</span> Genre Diffusion Tracking</h3>
+<p>In this part our focus is to track how the Oceanus Folk genre expanded over time by analyzing:</p>
 <ul>
-<li>New collaborations and influences forming</li>
-<li>The growth of artist networks</li>
+<li><p><strong>New collaborations</strong> between artists,</p></li>
+<li><p><strong>Emerging influence patterns</strong>, and</p></li>
+<li><p><strong>The evolving structure</strong> of the overall artist network.</p></li>
 </ul>
 </section>
 <section id="intermittent-vs.-gradual-influence-patterns" class="level3" data-number="4.3.3">
 <h3 data-number="4.3.3" class="anchored" data-anchor-id="intermittent-vs.-gradual-influence-patterns"><span class="header-section-number">4.3.3</span> Intermittent vs.&nbsp;Gradual Influence Patterns</h3>
-<p>We analyzed the <strong>frequency and consistency of influence relationships</strong> across time to distinguish between:</p>
+<p>We analyzed the frequency and consistency of influence spread across time within the Oceanus Folk genre. Specifically, we aim to distinguish between:</p>
 <ul>
-<li><strong>Intermittent influence</strong>: sharp, isolated bursts of impact (e.g., viral song)</li>
-<li><strong>Gradual influence</strong>: steady and persistent growth in artistic reach or style adoption</li>
+<li><strong>Intermittent influence:</strong> sharp, isolated bursts of impact (e.g., viral song)</li>
 </ul>
+<p>This propose us to oversee if there is a spike in release or influence within period of time, while also trying to find a node with few edges, but strong centrality within a short time window.</p>
+<ul>
+<li><strong>Gradual influence:</strong> steady and persistent growth in artistic reach or style adoption</li>
+</ul>
+<p>This propose us to oversee if there is a nodes with increasing degree or betweenness over multiple years</p>
 </section>
 </section>
 <section id="centrality-prediction" class="level2" data-number="4.4">
@@ -342,8 +357,8 @@ Penalizes artists who have not released new work recently, even if they debuted 
 <h1 data-number="5"><span class="header-section-number">5</span> Shiny Application Design</h1>
 <p>To support interactive exploration and analysis, we propose three Shiny applications.</p>
 <hr>
-<section id="shiny-app-1-sailor-shifts-career-explorer" class="level3" data-number="5.0.1">
-<h3 data-number="5.0.1" class="anchored" data-anchor-id="shiny-app-1-sailor-shifts-career-explorer"><span class="header-section-number">5.0.1</span> Shiny App 1: Sailor Shift’s Career Explorer</h3>
+<section id="shiny-app-1-sailor-shifts-career-explorer" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="shiny-app-1-sailor-shifts-career-explorer"><span class="header-section-number">5.1</span> Shiny App 1: Sailor Shift’s Career Explorer</h2>
 <p>This app allows users to trace Sailor Shift’s artistic journey through interactive visualizations.</p>
 <p><strong>Core Features:</strong></p>
 <ul>
@@ -355,8 +370,8 @@ Penalizes artists who have not released new work recently, even if they debuted 
 Understand key turning points in Sailor’s career and her expanding network of creative connections.</p>
 <hr>
 </section>
-<section id="shiny-app-2-oceanus-folk-influence-tracker" class="level3" data-number="5.0.2">
-<h3 data-number="5.0.2" class="anchored" data-anchor-id="shiny-app-2-oceanus-folk-influence-tracker"><span class="header-section-number">5.0.2</span> Shiny App 2: Oceanus Folk Influence Tracker</h3>
+<section id="shiny-app-2-oceanus-folk-influence-tracker" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="shiny-app-2-oceanus-folk-influence-tracker"><span class="header-section-number">5.2</span> Shiny App 2: Oceanus Folk Influence Tracker</h2>
 <p>This app focuses on how the Oceanus Folk genre has spread over time and impacted other artists and styles.</p>
 <p><strong>Core Features:</strong></p>
 <ul>
@@ -364,12 +379,11 @@ Understand key turning points in Sailor’s career and her expanding network of 
 <li><p>Genre diffusion visualizations</p></li>
 <li><p>Cross-genre influence analysis</p></li>
 </ul>
-<p><strong>Purpose:</strong><br>
-Track the global rise of Oceanus Folk and identify artists and genres influenced by it.</p>
+<p><strong>Purpose:</strong> Track the global rise of Oceanus Folk and identify artists and genres influenced by it.</p>
 <hr>
 </section>
-<section id="shiny-app-3-rising-star-prediction-dashboard" class="level3" data-number="5.0.3">
-<h3 data-number="5.0.3" class="anchored" data-anchor-id="shiny-app-3-rising-star-prediction-dashboard"><span class="header-section-number">5.0.3</span> Shiny App 3: Rising Star Prediction Dashboard</h3>
+<section id="shiny-app-3-rising-star-prediction-dashboard" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="shiny-app-3-rising-star-prediction-dashboard"><span class="header-section-number">5.3</span> Shiny App 3: Rising Star Prediction Dashboard</h2>
 <p>This app predicts future breakout artists by analyzing multiple career-related metrics.</p>
 <p><strong>Core Features:</strong></p>
 <ul>
@@ -447,67 +461,32 @@ Define what makes a rising star and forecast which Oceanus Folk artists are like
 <h1 data-number="7"><span class="header-section-number">7</span> Prototypes and Storyboards</h1>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="prototype sketch.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="prototype_2.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<p>The interactive Shiny application will serve as the primary interface for exploring the evolution of Sailor Shift’s career, her influence network, and the spread of Oceanus Folk. The core visualization will be a dynamically generated network graph, with accompanying temporal charts and statistical summaries to enrich the narrative.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Input</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Output</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<ol type="1">
-<li>Reference Node (Artist Selector) To avoid overwhelming the user with the full network (which contains over 60,000 nodes and 75,000 edges), users must select a reference node, such as Sailor Shift or another artist of interest. This serves as the anchor for all subsequent filtering.</li>
-</ol>
-<p>UI Element: selectInput() dropdown or searchable selectizeInput()</p>
-<p>Function: Defines the ego-network center from which we measure influence, collaborations, and diffusion</p>
-<ol start="2" type="1">
-<li>Network Depth (Proximity Filter) After selecting a reference node, the depth parameter will determine how far out the graph should render — in terms of shortest path distance from the selected node. Since artist subnetworks vary widely in size and density:</li>
-</ol>
-<p>A checkbox toggle will allow rendering of the entire connected component</p>
-<p>UI Elements: sliderInput() + checkboxInput() for “show full network”</p>
-<p>Function: Controls graph complexity and visual clutter</p>
-<ol start="3" type="1">
-<li>Date (Temporal Filter) To capture temporal dynamics, a date slider will be used to render the state of the network at a specific point in time. Only:</li>
-</ol>
-<p>Edges with a timestamp prior to or equal to the selected date will be rendered</p>
-<p>Nodes not involved in active edges at that date will be excluded</p>
-<p>UI Element: sliderInput() with year or month granularity</p>
-<p>Function: Allows exploration of an artist’s evolving career and influence</p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 37%">
-<col style="width: 62%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Output</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Network Graph (<code>ggraph</code>)</strong></td>
-<td>Visualizes selected artist’s ego-network at specified depth and time</td>
-</tr>
-<tr class="even">
-<td><strong>Node Tooltip Summary</strong></td>
-<td>Hover or click to show artist/album/song info, genre, notoriety</td>
-</tr>
-<tr class="odd">
-<td><strong>Genre Distribution Plot (<code>ggplot2</code>)</strong></td>
-<td>Shows dominant genres over time or in current neighborhood</td>
-</tr>
-<tr class="even">
-<td><strong>Influence Timeline (<code>line chart</code>)</strong></td>
-<td>Tracks how the artist’s influence score evolved over time</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
+<p>The interactive Shiny application will serve as the primary interface for exploring the evolution of Sailor Shift’s career, her influence network, and the spread of Oceanus Folk. The core visualization will be a dynamically generated network graph, with accompanying temporal charts or statistical summaries to enrich the narrative.</p>
+<!-- ::: panel-tabset -->
+<!-- ## Input -->
+<!-- 1.  Reference Node (Artist Selector) To avoid overwhelming the user with the full network (which contains over 60,000 nodes and 75,000 edges), users must select a reference node, such as Sailor Shift or another artist of interest. This serves as the anchor for all subsequent filtering. -->
+<!-- UI Element: selectInput() dropdown or searchable selectizeInput() -->
+<!-- Function: Defines the ego-network center from which we measure influence, collaborations, and diffusion -->
+<!-- 2.  Network Depth (Proximity Filter) After selecting a reference node, the depth parameter will determine how far out the graph should render — in terms of shortest path distance from the selected node. Since artist subnetworks vary widely in size and density: -->
+<!-- A checkbox toggle will allow rendering of the entire connected component -->
+<!-- UI Elements: sliderInput() + checkboxInput() for "show full network" -->
+<!-- Function: Controls graph complexity and visual clutter -->
+<!-- 3.  Date (Temporal Filter) To capture temporal dynamics, a date slider will be used to render the state of the network at a specific point in time. Only: -->
+<!-- Edges with a timestamp prior to or equal to the selected date will be rendered -->
+<!-- Nodes not involved in active edges at that date will be excluded -->
+<!-- UI Element: sliderInput() with year or month granularity -->
+<!-- Function: Allows exploration of an artist's evolving career and influence -->
+<!-- ## Output -->
+<!-- | Output | Description | -->
+<!-- |---------------------------|---------------------------------------------| -->
+<!-- | **Network Graph (`ggraph`)** | Visualizes selected artist’s ego-network at specified depth and time | -->
+<!-- | **Node Tooltip Summary** | Hover or click to show artist/album/song info, genre, notoriety | -->
+<!-- | **Genre Distribution Plot (`ggplot2`)** | Shows dominant genres over time or in current neighborhood | -->
+<!-- | **Influence Timeline (`line chart`)** | Tracks how the artist's influence score evolved over time | -->
+<!-- ::: -->
 
 
 </section>

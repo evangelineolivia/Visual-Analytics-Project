@@ -1,7 +1,6 @@
 ---
 title: "From Folk to Fame"
 description: "Team 10's Project Proposal"
-date-modified: "last-modified"
 execute:
   echo: true
   eval: true
@@ -21,15 +20,15 @@ In the rapidly evolving music industry, understanding how artists rise to fame a
 
 This project aims to build a Shiny web application that enables users to explore and interpret the following:
 
--   Sailor Shift’s influence: Who influenced her and whom she has influenced directly or indirectly
+-   **Sailor Shift’s influence**: Who influenced her and whom she has influenced directly or indirectly
 
--   Collaboration patterns: Which artists and genres have been shaped through her work
+-   **Collaboration patterns**: Which artists and genres have been shaped through her work
 
--   Genre evolution: How Oceanus Folk has spread and changed over time
+-   **Genre evolution**: How Oceanus Folk has spread and changed over time
 
--   Artist comparison: Explore the career trajectories of multiple artists in parallel
+-   **Artist comparison**: Explore the career trajectories of multiple artists in parallel
 
--   Rising star prediction: Identify up-and-coming Oceanus Folk artists using network centrality and activity measures
+-   **Rising star prediction**: Identify up-and-coming Oceanus Folk artists using network centrality and activity measures
 
 # Dataset Description
 
@@ -41,13 +40,15 @@ The data is from `MC1_graph.json`, a directed multigraph with:
 
 **Edge types**: `PerformerOf`, `ProducerOf`, `InterpolatesFrom`, `InStyleOf`, `CoverOf`,`MemberOf`, `ComposerOf`,`LyricistOf`,`LyricalReferenceTo`, `DirectlySamples`, `RecordedBy`, `DistributedBy`
 
-Attributes of Interest:
+::: callout-note
+## **Attributes of Interest:**
 
 **Songs and Albums**: genre, release date, notable, notoriety date
 
 **Persons**: name, stage name
 
 **Edges**: influence and collaboration types between nodes
+:::
 
 # Methodology
 
@@ -96,15 +97,25 @@ To understand how influence and collaboration evolve over time, we plan to condu
 
 ### Genre Diffusion Tracking
 
--   New collaborations and influences forming
--   The growth of artist networks
+In this part our focus is to track how the Oceanus Folk genre expanded over time by analyzing:
+
+-   **New collaborations** between artists,
+
+-   **Emerging influence patterns**, and
+
+-   **The evolving structure** of the overall artist network.
 
 ### Intermittent vs. Gradual Influence Patterns
 
-We analyzed the **frequency and consistency of influence relationships** across time to distinguish between:
+We analyzed the frequency and consistency of influence spread across time within the Oceanus Folk genre. Specifically, we aim to distinguish between:
 
--   **Intermittent influence**: sharp, isolated bursts of impact (e.g., viral song)
--   **Gradual influence**: steady and persistent growth in artistic reach or style adoption
+-   **Intermittent influence:** sharp, isolated bursts of impact (e.g., viral song)
+
+This propose us to oversee if there is a spike in release or influence within period of time, while also trying to find a node with few edges, but strong centrality within a short time window.
+
+-   **Gradual influence:** steady and persistent growth in artistic reach or style adoption
+
+This propose us to oversee if there is a nodes with increasing degree or betweenness over multiple years
 
 ## Centrality & Prediction
 
@@ -159,7 +170,7 @@ To support interactive exploration and analysis, we propose three Shiny applicat
 
 ------------------------------------------------------------------------
 
-### Shiny App 1: Sailor Shift’s Career Explorer
+## Shiny App 1: Sailor Shift’s Career Explorer
 
 This app allows users to trace Sailor Shift’s artistic journey through interactive visualizations.
 
@@ -176,7 +187,7 @@ Understand key turning points in Sailor's career and her expanding network of cr
 
 ------------------------------------------------------------------------
 
-### Shiny App 2: Oceanus Folk Influence Tracker
+## Shiny App 2: Oceanus Folk Influence Tracker
 
 This app focuses on how the Oceanus Folk genre has spread over time and impacted other artists and styles.
 
@@ -188,12 +199,11 @@ This app focuses on how the Oceanus Folk genre has spread over time and impacted
 
 -   Cross-genre influence analysis
 
-**Purpose:**\
-Track the global rise of Oceanus Folk and identify artists and genres influenced by it.
+**Purpose:** Track the global rise of Oceanus Folk and identify artists and genres influenced by it.
 
 ------------------------------------------------------------------------
 
-### Shiny App 3: Rising Star Prediction Dashboard
+## Shiny App 3: Rising Star Prediction Dashboard
 
 This app predicts future breakout artists by analyzing multiple career-related metrics.
 
@@ -228,43 +238,50 @@ Define what makes a rising star and forecast which Oceanus Folk artists are like
 
 # Prototypes and Storyboards
 
-![](prototype sketch.png){fig-align="center"}
+![](prototype_2.jpg){fig-align="center"}
 
-The interactive Shiny application will serve as the primary interface for exploring the evolution of Sailor Shift's career, her influence network, and the spread of Oceanus Folk. The core visualization will be a dynamically generated network graph, with accompanying temporal charts and statistical summaries to enrich the narrative.
+The interactive Shiny application will serve as the primary interface for exploring the evolution of Sailor Shift's career, her influence network, and the spread of Oceanus Folk. The core visualization will be a dynamically generated network graph, with accompanying temporal charts or statistical summaries to enrich the narrative.
 
-::: panel-tabset
-## Input
+<!-- ::: panel-tabset -->
 
-1.  Reference Node (Artist Selector) To avoid overwhelming the user with the full network (which contains over 60,000 nodes and 75,000 edges), users must select a reference node, such as Sailor Shift or another artist of interest. This serves as the anchor for all subsequent filtering.
+<!-- ## Input -->
 
-UI Element: selectInput() dropdown or searchable selectizeInput()
+<!-- 1.  Reference Node (Artist Selector) To avoid overwhelming the user with the full network (which contains over 60,000 nodes and 75,000 edges), users must select a reference node, such as Sailor Shift or another artist of interest. This serves as the anchor for all subsequent filtering. -->
 
-Function: Defines the ego-network center from which we measure influence, collaborations, and diffusion
+<!-- UI Element: selectInput() dropdown or searchable selectizeInput() -->
 
-2.  Network Depth (Proximity Filter) After selecting a reference node, the depth parameter will determine how far out the graph should render — in terms of shortest path distance from the selected node. Since artist subnetworks vary widely in size and density:
+<!-- Function: Defines the ego-network center from which we measure influence, collaborations, and diffusion -->
 
-A checkbox toggle will allow rendering of the entire connected component
+<!-- 2.  Network Depth (Proximity Filter) After selecting a reference node, the depth parameter will determine how far out the graph should render — in terms of shortest path distance from the selected node. Since artist subnetworks vary widely in size and density: -->
 
-UI Elements: sliderInput() + checkboxInput() for "show full network"
+<!-- A checkbox toggle will allow rendering of the entire connected component -->
 
-Function: Controls graph complexity and visual clutter
+<!-- UI Elements: sliderInput() + checkboxInput() for "show full network" -->
 
-3.  Date (Temporal Filter) To capture temporal dynamics, a date slider will be used to render the state of the network at a specific point in time. Only:
+<!-- Function: Controls graph complexity and visual clutter -->
 
-Edges with a timestamp prior to or equal to the selected date will be rendered
+<!-- 3.  Date (Temporal Filter) To capture temporal dynamics, a date slider will be used to render the state of the network at a specific point in time. Only: -->
 
-Nodes not involved in active edges at that date will be excluded
+<!-- Edges with a timestamp prior to or equal to the selected date will be rendered -->
 
-UI Element: sliderInput() with year or month granularity
+<!-- Nodes not involved in active edges at that date will be excluded -->
 
-Function: Allows exploration of an artist's evolving career and influence
+<!-- UI Element: sliderInput() with year or month granularity -->
 
-## Output
+<!-- Function: Allows exploration of an artist's evolving career and influence -->
 
-| Output | Description |
-|---------------------------|---------------------------------------------|
-| **Network Graph (`ggraph`)** | Visualizes selected artist’s ego-network at specified depth and time |
-| **Node Tooltip Summary** | Hover or click to show artist/album/song info, genre, notoriety |
-| **Genre Distribution Plot (`ggplot2`)** | Shows dominant genres over time or in current neighborhood |
-| **Influence Timeline (`line chart`)** | Tracks how the artist's influence score evolved over time |
-:::
+<!-- ## Output -->
+
+<!-- | Output | Description | -->
+
+<!-- |---------------------------|---------------------------------------------| -->
+
+<!-- | **Network Graph (`ggraph`)** | Visualizes selected artist’s ego-network at specified depth and time | -->
+
+<!-- | **Node Tooltip Summary** | Hover or click to show artist/album/song info, genre, notoriety | -->
+
+<!-- | **Genre Distribution Plot (`ggplot2`)** | Shows dominant genres over time or in current neighborhood | -->
+
+<!-- | **Influence Timeline (`line chart`)** | Tracks how the artist's influence score evolved over time | -->
+
+<!-- ::: -->
