@@ -74,20 +74,13 @@
     "href": "Team/Project_Proposal.html#shiny-app-1-sailor-shifts-career-explorer",
     "title": "From Folk to Fame",
     "section": "5.1 Shiny App 1: Sailor Shift’s Career Explorer",
-    "text": "5.1 Shiny App 1: Sailor Shift’s Career Explorer\nThis app allows users to trace Sailor Shift’s artistic journey through interactive visualizations.\nCore Features:\n\nTimeline of album/single releases\nNetwork of collaborations\nGenre evolution over time\n\nPurpose:\nUnderstand key turning points in Sailor’s career and her expanding network of creative connections."
-  },
-  {
-    "objectID": "Team/Project_Proposal.html#shiny-app-2-oceanus-folk-influence-tracker",
-    "href": "Team/Project_Proposal.html#shiny-app-2-oceanus-folk-influence-tracker",
-    "title": "From Folk to Fame",
-    "section": "5.2 Shiny App 2: Oceanus Folk Influence Tracker",
-    "text": "5.2 Shiny App 2: Oceanus Folk Influence Tracker\nThis app focuses on how the Oceanus Folk genre has spread over time and impacted other artists and styles.\nCore Features:\n\nTemporal influence network\nGenre diffusion visualizations\nCross-genre influence analysis\n\nPurpose: Track the global rise of Oceanus Folk and identify artists and genres influenced by it."
+    "text": "5.1 Shiny App 1: Sailor Shift’s Career Explorer\nThis app allows users to trace Sailor Shift’s artistic journey through interactive visualizations.\nCore Features:\n\nTimeline of album/single releases\nNetwork of collaborations\nGenre evolution over time\n\nPurpose:\nUnderstand key turning points in Sailor’s career and her expanding network of creative connections.\n\n\n5.1.1 Shiny App 2: Oceanus Folk Influence Tracker\nThis app focuses on how the Oceanus Folk genre has spread over time-both as a influencer of other artists and styles, and as a recipient of influence from outside artist and genres.\nCore Features:\n\nTemporal influence network\nGenre diffusion visualizations\nCross-genre influence analysis\n\nPurpose:\nTo track the global rise and evolution of the Oceanus Folk genre and identify artists and genres influenced by it."
   },
   {
     "objectID": "Team/Project_Proposal.html#shiny-app-3-rising-star-prediction-dashboard",
     "href": "Team/Project_Proposal.html#shiny-app-3-rising-star-prediction-dashboard",
     "title": "From Folk to Fame",
-    "section": "5.3 Shiny App 3: Rising Star Prediction Dashboard",
-    "text": "5.3 Shiny App 3: Rising Star Prediction Dashboard\nThis app predicts future breakout artists by analyzing multiple career-related metrics.\nCore Features:\n\nRising Star Score calculation\nComparison of artist trajectories\nFilters by genre, debut year, or charted songs\n\nPurpose:\nDefine what makes a rising star and forecast which Oceanus Folk artists are likely to break out next."
+    "section": "5.2 Shiny App 3: Rising Star Prediction Dashboard",
+    "text": "5.2 Shiny App 3: Rising Star Prediction Dashboard\nThis app predicts future breakout artists by analyzing multiple career-related metrics.\nCore Features:\n\nRising Star Score calculation\nComparison of artist trajectories\nFilters by genre, debut year, or charted songs\n\nPurpose:\nDefine what makes a rising star and forecast which Oceanus Folk artists are likely to break out next."
   }
 ]

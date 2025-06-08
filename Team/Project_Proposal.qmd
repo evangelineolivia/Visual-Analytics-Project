@@ -189,7 +189,7 @@ Understand key turning points in Sailor's career and her expanding network of cr
 
 ## Shiny App 2: Oceanus Folk Influence Tracker
 
-This app focuses on how the Oceanus Folk genre has spread over time and impacted other artists and styles.
+This app focuses on how the Oceanus Folk genre has spread over time-both as a influencer of other artists and styles, and as a recipient of influence from outside artist and genres.
 
 **Core Features:**
 
@@ -199,7 +199,8 @@ This app focuses on how the Oceanus Folk genre has spread over time and impacted
 
 -   Cross-genre influence analysis
 
-**Purpose:** Track the global rise of Oceanus Folk and identify artists and genres influenced by it.
+**Purpose:**\
+To track the global rise and evolution of the **Oceanus Folk** genre and identify artists and genres influenced by it.
 
 ------------------------------------------------------------------------
 
