@@ -2,9 +2,9 @@ project:
   type: website
 
 website:
-
+  favicon: img/logo2.png
   navbar:
-    title: "From Folk to Fame"
+    logo: img/logo.png
     background: "transparent"
     foreground: "#ffff"
     right:
@@ -13,7 +13,6 @@ website:
       - text: "Prototype"
         menu:
           - text : " "
-      
       - text: "Team"
         menu:
           - href: about.qmd

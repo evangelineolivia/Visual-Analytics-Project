@@ -233,9 +233,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 code {
-  color: #0D3B66; /* Bright blue */
-  background-color: #fff; /* Light blue background */
+  color: #0D3B66;
+  background-color: #fff; 
   font-weight: 800;
   padding: 0.1em 0.3em;
   border-radius: 4px;
+}
+
+.navbar-brand img {
+  height: 100px; /* Adjust height as needed */
+  width: auto;  /* Keeps the aspect ratio */
 }
