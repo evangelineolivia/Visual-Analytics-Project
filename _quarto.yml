@@ -12,7 +12,8 @@ website:
         href: Team/Project_Proposal.qmd
       - text: "Prototype"
         menu:
-          - text : " "
+          - text: "Storyboard"
+          - href: prototype/storyboard.html
       - text: "Team"
         menu:
           - href: about.qmd
