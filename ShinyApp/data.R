@@ -4,7 +4,7 @@ pacman::p_load(tidyverse, jsonlite,
 library(dplyr)
 
 #Load Data
-data <- fromJSON("C:/evangelineolivia/Visual-Analytics-Project/ShinyApp/MC1_graph.json")  
+data <- fromJSON("MC1_graph.json")  
 
 # Custom Theme
 font_add_google("Montserrat", "montserrat")
@@ -194,4 +194,44 @@ release_summary_table <- nodes %>%
 #### Table
 
 
+
+## Oceanus Folk Influence Tracker
+
+### Tab 1 : Overview
+
+#### Total performers
+oceanus_songs <- nodes %>% 
+  filter(
+    genre == "Oceanus Folk",
+    type == "Song"| type == "Album"
+  )
+
+performer_edges <- edges %>%
+  filter(relation == "PerformerOf", to %in% oceanus_songs$row_id)
+
+performer_ids <- unique(performer_edges$from)
+
+unique_performers <- nodes %>%
+  filter(row_id %in% performer_ids, type %in% c("Person", "MusicalGroup")) %>% 
+  select(`Name`=name,`Type`=type)
+
+n_unique_performers <- nrow(unique_performers)
+ 
+#### Total Release
+oceanus_releases <- nodes %>%
+  filter(
+    genre == "Oceanus Folk",
+    type == "Song" | type == "Album"
+  ) %>%
+  mutate(
+    year = as.integer(release_date)
+  ) %>%
+  filter(!is.na(year)) %>%
+  count(year, type, name = "n")
+oceanus_release <- nrow(oceanus_releases)
+
+#### Year Active
+Year_active <- paste(min(oceanus_releases$year),"-",max(oceanus_releases$year))
+
+### Tab 2 : Influence Timeline
 
