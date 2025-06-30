@@ -85,7 +85,7 @@ app2_ui <- tabItem(
                                  title = "Songs / Albums Influenced by Oceanus Folk",
                                  width = 12,
                                  solidHeader = TRUE,
-                                 status = "info",
+                                 status = "primary",
                                  visNetworkOutput("oceanusInfluenceNetwork", height = "400px")
                                )
                         )
@@ -96,7 +96,7 @@ app2_ui <- tabItem(
                                  title = "Genres Influenced by Oceanus Folk",
                                  width = 12,
                                  solidHeader = TRUE,
-                                 status = "info",
+                                 status = "primary",
                                  dataTableOutput("genreInfluenceTable")
                                )
                         ),
@@ -105,7 +105,7 @@ app2_ui <- tabItem(
                                  title = "Artists with Charted Songs Influenced by Oceanus Folk",
                                  width = 12,
                                  solidHeader = TRUE,
-                                 status = "info",
+                                 status = "primary",
                                  dataTableOutput("notableArtistTable")
                                )
                         )
@@ -130,7 +130,7 @@ app2_ui <- tabItem(
                                  title = "Network Graph",
                                  width = 12,
                                  solidHeader = TRUE,
-                                 status = "info",
+                                 status = "primary",
                                  visNetworkOutput("rootsNetwork", height = "400px")
                                )
                         )
@@ -141,7 +141,7 @@ app2_ui <- tabItem(
                                  title = "Genres that Influence Oceanus Folk Songs",
                                  width = 12,
                                  solidHeader = TRUE,
-                                 status = "info",
+                                 status = "primary",
                                  dataTableOutput("influencedGenreTable")
                                )
                         )

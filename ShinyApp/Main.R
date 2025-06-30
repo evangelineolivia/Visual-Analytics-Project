@@ -74,6 +74,9 @@ body <- dashboardBody(
           font-size: 20px !important; 
           font-weight: bold;
         }
+       .box.box-solid.box-primary .box-header{
+        background-color: #96B3C2 !important;
+        }
     "))
   ),
   tabItems(
