@@ -34,19 +34,12 @@ app2_ui <- tabItem(
              
              tabPanel("Influence Timeline",
                    h3("Oceanus Folk's Influence Over Time", style = "text-align: center; font-weight: bold; margin: 0px; padding: 0px;"),
- 
                       br(),
                       tabItem(
                         tabName = "influence_timeline",
-                        fluidRow(
                           fluidRow(
                             column(width = 4,
-                                   checkboxGroupInput(
-                                     inputId = "influence_type",
-                                     label = "Influence Type",
-                                     choices = c("InStyleOf", "CoverOf", "LyricalReferenceTo", "InterpolatesFrom", "DirectlySamples"),
-                                     selected = c("InStyleOf", "CoverOf", "LyricalReferenceTo", "InterpolatesFrom", "DirectlySamples")
-                                   ),
+                                   selectInput("influence_type", "Influence Type", choices = c("InStyleOf", "CoverOf", "LyricalReferenceTo", "InterpolatesFrom", "DirectlySamples"), selected = c("InStyleOf", "CoverOf", "LyricalReferenceTo", "InterpolatesFrom", "DirectlySamples"), multiple = TRUE),
                                    sliderInput("influence_year_range", "Year",
                                                min = 1990, max = 2040, value = c(1990, 2040), sep = ""),
                                    box(
@@ -61,8 +54,6 @@ app2_ui <- tabItem(
                                    plotOutput("oceanusPlot", height = "400px")
                             )
                           )
-                          
-                        )
                       )
                       
              ),
@@ -245,8 +236,14 @@ app2_server <- function(input, output, session) {
       ) +
       theme_minimal(base_size = 12) +
       theme(
-        axis.text.x = element_text(angle = 45, hjust = 1)
+        axis.text.x = element_text(angle = 45, hjust = 1),
+        plot.background = theme$background,
+        panel.background = theme$panel,
+        panel.grid.major = theme$grid,
+        text = element_text(size = theme$size),
+        plot.title = theme$title,
       )
+      
   })
   
   # Network Graph

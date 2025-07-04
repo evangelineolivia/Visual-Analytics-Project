@@ -17,7 +17,7 @@ app3_ui <- tabItem(
              width = 12,
              
              tabPanel("Activity",
-                      h3("Influence Overview", style = "text-align: center; font-weight: bold; margin-top: 10px;"),
+                      h3("Artist's Activity", style = "text-align: center; font-weight: bold; margin-top: 10px;"),
                       br(),
                       fluidRow(
                         column(width = 4, selectizeInput("artist_a", "Artist 1", choices = NULL,
@@ -91,12 +91,12 @@ app3_ui <- tabItem(
                         column(width = 6, box(title = textOutput("title_a_con"),
                                               width = 12,
                                               solidHeader = TRUE,
-                                              status = "info",
+                                              status = "primary",
                                               visNetworkOutput("artist_a_contribution"))),
                         column(width = 6, box(title = textOutput("title_b_con"),
                                               width = 12,
                                               solidHeader = TRUE,
-                                              status = "info",
+                                              status = "primary",
                                               visNetworkOutput("artist_b_contribution")))
                       ),
                       
@@ -104,12 +104,12 @@ app3_ui <- tabItem(
                         column(width = 6, box(title = textOutput("title_c_con"),
                                               width = 12,
                                               solidHeader = TRUE,
-                                              status = "info",
+                                              status = "primary",
                                               visNetworkOutput("artist_c_contribution", height = "300px"))),
                         column(width = 6, box(title = "Artist's Contribution Table",
                                               width = 12,
                                               solidHeader = TRUE,
-                                              status = "info",
+                                              status = "primary",
                                               DT::dataTableOutput("contribution_table")) # Contribution_table
                         )
                       )
@@ -141,12 +141,12 @@ app3_ui <- tabItem(
                         column(width = 6, box(title = textOutput("title_a_col"),
                                               width = 12,
                                               solidHeader = TRUE,
-                                              status = "info",
+                                              status = "primary",
                                               visNetworkOutput("artist_a_collaboration"))),
                         column(width = 6, box(title = textOutput("title_b_col"),
                                               width = 12,
                                               solidHeader = TRUE,
-                                              status = "info",
+                                              status = "primary",
                                               visNetworkOutput("artist_b_collaboration")))
                       ),
                       
@@ -154,12 +154,12 @@ app3_ui <- tabItem(
                         column(width = 6, box(title = textOutput("title_c_col"),
                                               width = 12,
                                               solidHeader = TRUE,
-                                              status = "info",
+                                              status = "primary",
                                               visNetworkOutput("artist_c_collaboration", height = "300px"))),
                         column(width = 6, box(title = "Artist's Collaboration Table",
                                               width = 12,
                                               solidHeader = TRUE,
-                                              status = "info",
+                                              status = "primary",
                                               DT::dataTableOutput("collaboration_table")) 
                         )
                       )
@@ -196,7 +196,7 @@ app3_ui <- tabItem(
                                  box(title = "Charted Data Table",
                                      width = 12,
                                      solidHeader = TRUE,
-                                     status = "info",
+                                     status = "primary",
                                      DT::dataTableOutput("charted_table", height = "400px")) 
                           )
                         )
@@ -212,7 +212,7 @@ app3_ui <- tabItem(
                         column(width = 12, box(title = "Rising Star Data Table",
                                                width = 12,
                                                solidHeader = TRUE,
-                                               status = "info",
+                                               status = "primary",
                                                DT::dataTableOutput("rising_star_table")))
                       ),
                       
@@ -970,7 +970,8 @@ app3_server <- function(input, output, session) {
     collab_edges_vis <- collab_edges %>%
       mutate(
         arrows = "to",
-        color = edge_colors[relation] %>% unname()
+        color = edge_colors[relation] %>% unname(),
+        title = paste0("<b>Relation:</b> ", relation)
       )
     
     visNetwork(collab_nodes, collab_edges_vis) %>%
@@ -1066,7 +1067,8 @@ app3_server <- function(input, output, session) {
     collab_edges_vis <- collab_edges %>%
       mutate(
         arrows = "to",
-        color = edge_colors[relation] %>% unname()
+        color = edge_colors[relation] %>% unname(),
+        title = paste0("<b>Relation:</b> ", relation)
       )
     
     visNetwork(collab_nodes, collab_edges_vis) %>%
@@ -1163,7 +1165,8 @@ app3_server <- function(input, output, session) {
     collab_edges_vis <- collab_edges %>%
       mutate(
         arrows = "to",
-        color = edge_colors[relation] %>% unname()
+        color = edge_colors[relation] %>% unname(),
+        title = paste0("<b>Relation:</b> ", relation)
       )
     
     visNetwork(collab_nodes, collab_edges_vis) %>%
@@ -1367,17 +1370,17 @@ app3_server <- function(input, output, session) {
     paste("Network Graph of ", input$contrib_artist_c)
   })
   
-  output$title_a_con <- renderText({
+  output$title_a_col <- renderText({
     req(input$collab_artist_a)
     paste("Network Graph of ", input$collab_artist_a)
   })
   
-  output$title_b_con <- renderText({
+  output$title_b_col <- renderText({
     req(input$collab_artist_b)
     paste("Network Graph of ", input$collab_artist_b)
   })
   
-  output$title_c_con <- renderText({
+  output$title_c_col <- renderText({
     req(input$collab_artist_c)
     paste("Network Graph of ", input$collab_artist_c)
   })

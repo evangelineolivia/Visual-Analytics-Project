@@ -34,7 +34,9 @@ app1_ui <- tabItem(
                                  width = 12,
                                  solidHeader = TRUE,
                                  status = "primary",
-                                 "Descriptive Text"
+                                 p("This timeline showcases Sailor Shift’s creative journey, visualizing the distribution of her songs and albums across the years."),
+                                 p("Use the filters above to explore specific release types or focus on particular time periods."),
+                                 p("The table provides detailed metadata for each release, including genre, notability, and release format.")
                                )
                         ),
                         column(width = 8,
@@ -57,8 +59,9 @@ app1_ui <- tabItem(
                                  width = 12,
                                  solidHeader = TRUE,
                                  status = "primary",
-                                 "Descriptive Text"
-                                  )
+                                 p("Explore Sailor Shift’s creative network through her roles as performer, composer, producer, and lyricist."),
+                                 p("Use the filters to view specific collaboration types. The graph shows her connections, while the table lists key details of each partnership.")
+                               )
                               ),
                         column(width = 8,
                                visNetworkOutput("collabNetwork", height = "350px")
@@ -80,7 +83,9 @@ app1_ui <- tabItem(
                                  width = 12,
                                  solidHeader = TRUE,
                                  status = "primary",
-                                 "Descriptive Text"
+                                 p("This module explores the influence landscape surrounding Sailor Shift’s work."),
+                                 p("Use the filters to focus on specific influence types such as 'CoverOf', 'InStyleOf', or 'DirectlySamples'."),
+                                 p("The network graph visualizes directional influence between works, while the table provides detailed metadata on each connection.")
                                )
                         ),
                         column(width = 8,
