@@ -1,5 +1,5 @@
 ---
-title: "From Folk to Fame"
+title: "VAST Challenge 2025: Music Influence Exploration"
 format:
   html:
     css: styles.css
@@ -22,8 +22,12 @@ From Folk to Fame
 :::
 
 ::: {#after .mini}
+<div class="spacer"></div>
+
 Tracing the Rise of Artists Through Data
 :::
+
+
 :::::::
 
 ```{=html}
@@ -44,3 +48,40 @@ Tracing the Rise of Artists Through Data
   });
 </script>
 ```
+
+<div class="spacer"></div>
+
+
+::: {.content}
+**"From Folk to Fame"** is part of the **VAST Challenge 2025**. This project explores the evolution of the Oceanus Folk music genre. By modeling the influence networks of artists, albums, and genres, we uncover patterns of cultural development, key collaborations, and the emergence of iconic figures.
+
+In our Shiny app, you can explore:
+
+:::::::::::: team-container
+::::: profile-card
+<img src="images/genre_evolution.png"/>
+
+::: profile-quote
+The evolution of Oceanus Folk from 1992 to present
+:::
+:::::
+
+::::: profile-card
+<img src="images/influence_network.png"/>
+
+::: profile-quote
+MITB' 25 - Analytics
+:::
+:::::
+
+::::: profile-card
+<img src="images/next_star.png"/>
+
+::: profile-quote
+Predictive insights into emerging stars
+:::
+:::::
+
+::::::::::::
+
+:::

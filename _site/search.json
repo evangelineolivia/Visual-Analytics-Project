@@ -14,18 +14,18 @@
     "text": "Minutes of Team Meeting\nDate : Sunday, 2nd June 2025\nTime : 10:30am-11:30am\nPresent:\n\nEvangeline Olivia Sidiharto Kusumoputri\nPatricia Trisno\nXu, Xinyi\n\n\n\nAgenda Items\n\n1. Module Prototyping Progress Review\nAction: Each member shared updates on the module they are individually developing as part of the Mini-Challenge 1 prototype.\nDiscussion:\n\nAll members confirmed progress in module coding and visualization.\nXinyi focused on implementing temporal influence dynamics using centrality scores over time.\nEvangeline explored artists in the network and used a scoring system based on their collaborations, creative roles, and charted works to predict which ones are most likely to become rising stars.\nPatricia explored visualizing collaboration density and node degree for genre evolution tracking.\n\nOutcome: Modules are progressing well, and all team members are on track to finalize them before integration.\n\n\n2. Shiny App Integration Planning\nAction: Planned how individual prototype modules will be integrated into the final Shiny application.\nDiscussion:\n\nAgreed to use a tab-based interface where each tab represents one analytical module.\nDecided to define shared data inputs at the global level (server.R) and reuse across modules.\nDiscussed standardizing visual styling and color palettes for a consistent interface.\n\nOutcome: Integration strategy confirmed. Final modules will be modularized using moduleServer() and UI() structure for Shiny compatibility.\n\n\n3. Set up a shared Git repository for version control and backup.\nNext Steps\n\nFinalize each module individually.\nBegin layout design of the poster over the weekend.\nSchedule dry run of full Shiny app by 10th June.\n\nNext Meeting Scheduled: Monday, 16th June (7:00 pm – 8:00 pm)"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "From Folk to Fame",
+    "title": "VAST Challenge 2025: Music Influence Exploration",
     "section": "",
-    "text": "Folk\n\n\nFame\n\n\nFrom Folk to Fame\n\n\nTracing the Rise of Artists Through Data"
+    "text": "Folk\n\n\nFame\n\n\nFrom Folk to Fame\n\n\n\n\n\nTracing the Rise of Artists Through Data\n\n\n\n\n\n\n\n“From Folk to Fame” is part of the VAST Challenge 2025. This project explores the evolution of the Oceanus Folk music genre. By modeling the influence networks of artists, albums, and genres, we uncover patterns of cultural development, key collaborations, and the emergence of iconic figures.\nIn our Shiny app, you can explore:\n\n\n\n\nThe evolution of Oceanus Folk from 1992 to present\n\n\n\n\n\nMITB’ 25 - Analytics\n\n\n\n\n\nPredictive insights into emerging stars"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Our Team",
+    "section": "",
+    "text": "EVANGELINE OLIVIA\n\n\nMITB’ 25 - Analytics\n\n\n\n  \n\nPATRICIA TRISNO\n\n\nMITB’ 25 - Analytics\n\n\n\n  \n\nXU XINYI\n\n\nMITB’ 25 - Analytics"
   },
   {
     "objectID": "Team/Minutes_of_Meetings/data/Minutes_of_Meetings1.html",
@@ -77,17 +77,17 @@
     "text": "5.1 Shiny App 1: Sailor Shift’s Career Explorer\nThis app allows users to trace Sailor Shift’s artistic journey through interactive visualizations.\nCore Features:\n\nTimeline of album/single releases\nNetwork of collaborations\nGenre evolution over time\n\nPurpose:\nUnderstand key turning points in Sailor’s career and her expanding network of creative connections."
   },
   {
-    "objectID": "Team/Project_Proposal.html#shiny-app-3-rising-star-prediction-dashboard",
-    "href": "Team/Project_Proposal.html#shiny-app-3-rising-star-prediction-dashboard",
-    "title": "From Folk to Fame",
-    "section": "5.3 Shiny App 3: Rising Star Prediction Dashboard",
-    "text": "5.3 Shiny App 3: Rising Star Prediction Dashboard\nThis app predicts future breakout artists by analyzing multiple career-related metrics.\nCore Features:\n\nRising Star Score calculation\nComparison of artist trajectories\nFilters by genre, debut year, or charted songs\n\nPurpose:\nDefine what makes a rising star and forecast which Oceanus Folk artists are likely to break out next."
-  },
-  {
     "objectID": "Team/Project_Proposal.html#shiny-app-2-oceanus-folk-influence-tracker",
     "href": "Team/Project_Proposal.html#shiny-app-2-oceanus-folk-influence-tracker",
     "title": "From Folk to Fame",
     "section": "5.2 Shiny App 2: Oceanus Folk Influence Tracker",
     "text": "5.2 Shiny App 2: Oceanus Folk Influence Tracker\nThis app focuses on how the Oceanus Folk genre has spread over time-both as a influencer of other artists and styles, and as a recipient of influence from outside artist and genres.\nCore Features:\n\nTemporal influence network\nGenre diffusion visualizations\nCross-genre influence analysis\n\nPurpose:\nTo track the global rise and evolution of the Oceanus Folk genre and identify artists and genres influenced by it."
+  },
+  {
+    "objectID": "Team/Project_Proposal.html#shiny-app-3-rising-star-prediction-dashboard",
+    "href": "Team/Project_Proposal.html#shiny-app-3-rising-star-prediction-dashboard",
+    "title": "From Folk to Fame",
+    "section": "5.3 Shiny App 3: Rising Star Prediction Dashboard",
+    "text": "5.3 Shiny App 3: Rising Star Prediction Dashboard\nThis app predicts future breakout artists by analyzing multiple career-related metrics.\nCore Features:\n\nRising Star Score calculation\nComparison of artist trajectories\nFilters by genre, debut year, or charted songs\n\nPurpose:\nDefine what makes a rising star and forecast which Oceanus Folk artists are likely to break out next."
   }
 ]

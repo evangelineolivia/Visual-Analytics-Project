@@ -1,9 +1,37 @@
 ---
-title: "About"
+title: "Our Team"
+format: html
 ---
 
-About this site
+::: {.team-container}
 
-```{r}
-1 + 1
-```
+<div class="profile-card">
+  <a href="https://www.linkedin.com/in/patricia-trisno-93298a216/" target="_blank">
+    <img src="images/patricia.jpg" alt="Olivia">
+  </a>
+  <div class="profile-name">EVANGELINE OLIVIA</div>
+  <div class="profile-quote">MITB' 25 - Analytics</div>
+
+  
+</div>
+
+<div class="profile-card">
+  <a href="https://www.linkedin.com/in/patricia-trisno-93298a216/" target="_blank">
+    <img src="images/patricia.jpg" alt="Patricia Trisno">
+  </a>
+  <div class="profile-name">PATRICIA TRISNO</div>
+  <div class="profile-quote">MITB' 25 - Analytics</div>
+  
+</div>
+
+<div class="profile-card">
+  <a href="https://www.linkedin.com/in/patricia-trisno-93298a216/" target="_blank">
+    <img src="images/patricia.jpg" alt="Xuxinyi">
+  </a>
+  <div class="profile-name">XU XINYI</div>
+  <div class="profile-quote">MITB' 25 - Analytics</div>
+   
+</div>
+
+:::
+
