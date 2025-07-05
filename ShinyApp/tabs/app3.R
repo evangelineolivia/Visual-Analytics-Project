@@ -215,7 +215,6 @@ app3_ui <- tabItem(
                                                status = "primary",
                                                DT::dataTableOutput("rising_star_table")))
                       ),
-                      
                       fluidRow(
                         column(
                           width = 12,
@@ -224,8 +223,7 @@ app3_ui <- tabItem(
                             width = 12,
                             solidHeader = TRUE,
                             status = "primary",
-                            "Around the top performers in Oceanus genre, Sailor Shift leads with 26 recent works and 14 charted release. Following that beatrice Albright, Daniel O'Connel, and Orla Seabloom each with 8 charted release, placed after Sailor's in the top ranking and predicted to be the next rising star with consistent impact."
-                          )
+                            "From the findings, we can see that Beatrice Albright, Daniel O’Connell, and Orla Seabloom are next following Sailor. With 8 of their recent works all being top-charted, their consistency in quality can be one factor that makes them stand out as emerging rising stars."                          )
                         )
                       )
                       
@@ -1337,10 +1335,21 @@ app3_server <- function(input, output, session) {
       "Charted", "Collabs", "Creative", "Inactivity", "Freshness",
       "Charted Ratio", "Rising Star Score"
     )
-    DT::datatable(table, rownames = FALSE, options = list(
-      pageLength = 5,
-      autoWidth = TRUE
-    ))
+    table <- table %>%
+      mutate(
+        Freshness = round(Freshness, 3),
+        `Charted Ratio` = round(`Charted Ratio`, 2)
+      )
+    DT::datatable(
+      table,
+      rownames = FALSE,
+      options = list(
+        pageLength = 10,
+        autoWidth = TRUE,
+        scrollX = TRUE
+      ),
+      class = "display compact stripe hover"
+    )
   })
   
   
