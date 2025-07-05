@@ -13,13 +13,19 @@ website:
       - text: "Prototype"
         menu:
           - text: "Storyboard"
-          - href: prototype/storyboard.html
+            href: prototype/storyboard.html
       - text: "Team"
         menu:
           - href: about.qmd
             text: "About Us"
           - text: "Minutes of Meetings" 
             href: Team/Minutes_of_Meetings/MM_Page.html
+      - text: "Shiny App"
+        menu:
+          - href: about.qmd
+            text: "User Guide"
+          - href: https://evangelineolivia.shinyapps.io/ShinyApp/
+            text: "Shiny App"
   page-footer: 
     background: "transparent"
     foreground: "black"

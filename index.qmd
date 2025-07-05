@@ -53,7 +53,7 @@ Tracing the Rise of Artists Through Data
 
 
 ::: {.content}
-**"From Folk to Fame"** is part of the **VAST Challenge 2025**. This project explores the evolution of the Oceanus Folk music genre. By modeling the influence networks of artists, albums, and genres, we uncover patterns of cultural development, key collaborations, and the emergence of iconic figures.
+**"From Folk to Fame"** is part of the **VAST Challenge 2025**. This project explores the evolution of the Oceanus Folk music genre. By modeling the influence networks of artists, albums, and genres, we uncover patterns of cultural development, key collaborations, and the emergence of iconic figures.
 
 In our Shiny app, you can explore:
 

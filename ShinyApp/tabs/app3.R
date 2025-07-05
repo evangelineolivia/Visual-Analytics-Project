@@ -849,6 +849,7 @@ app3_server <- function(input, output, session) {
   ###
   
   output$contribution_table <- DT::renderDataTable({
+    contribution <- c("ComposerOf", "ProducerOf", "LyricistOf")
     req(input$contrib_artist_a, input$contrib_artist_b, input$contrib_artist_c)
     
     artist_names <- c(input$contrib_artist_a, input$contrib_artist_b, input$contrib_artist_c)
@@ -856,34 +857,11 @@ app3_server <- function(input, output, session) {
     artist_nodes <- nodes %>%
       filter(type == "Person", name %in% artist_names)
     
-    collab_summary <- purrr::map_dfr(artist_names, function(name) {
-      artist_id <- artist_nodes %>%
-        filter(name == !!name) %>%
-        pull(row_id)
-      
-      works <- edges %>%
-        filter(from == artist_id, relation %in% collab_types) %>%
-        pull(to)
-      
-      collab_ids <- edges %>%
-        filter(to %in% works, relation %in% collab_types, from != artist_id) %>%
-        pull(from) %>%
-        unique()
-      
-      nodes %>%
-        filter(row_id %in% collab_ids) %>%
-        count(type) %>%
-        mutate(artist = name)
-    })
-    
-    collab_summary <- collab_summary %>%
-      tidyr::pivot_wider(names_from = type, values_from = n, values_fill = 0) %>%
-      dplyr::select(artist, dplyr::everything())
-    
-    DT::datatable(collab_summary, rownames = FALSE, options = list(
-      pageLength = 5,
-      autoWidth = TRUE
-    ))
+    contribution_counts <- edges %>%
+      filter(from %in% artist_nodes$row_id, relation %in% contribution) %>%
+      left_join(artist_nodes %>% select(row_id, artist_name = name), by = c("from" = "row_id")) %>%
+      count(artist_name, relation) %>%
+      pivot_wider(names_from = relation, values_from = n, values_fill = 0)
   })
   
   
@@ -1307,34 +1285,60 @@ app3_server <- function(input, output, session) {
   })
   
   output$rising_star_table <- DT::renderDataTable({
+    oceanus_nodes <- nodes %>%
+      filter(genre == "Oceanus Folk", type %in% c("Song", "Album")) %>%
+      pull(row_id)
     
-    # Filter for recent Oceanus Folk works
-    recent_works <- nodes %>%
-      filter(genre == "Oceanus Folk", type %in% c("Song", "Album"), as.integer(release_date) >= 2021)
+    oceanus_performers <- edges %>%
+      filter(to %in% oceanus_nodes, relation == "PerformerOf") %>%
+      pull(from) %>% unique()
     
-    if (nrow(recent_works) == 0) return(NULL)
+    collabs <- edges %>%
+      filter(relation %in% c("ComposerOf", "LyricistOf", "ProducerOf"),
+             from %in% oceanus_performers) %>%
+      group_by(from) %>%
+      summarise(Collabs = n_distinct(to), Creative = n(), .groups = "drop")
     
-    # Get performers of those works
-    performer_edges <- edges %>%
-      filter(relation == "PerformerOf", to %in% recent_works$row_id)
+    release_info <- edges %>%
+      filter(from %in% oceanus_performers, relation == "PerformerOf", to %in% oceanus_nodes) %>%
+      left_join(nodes %>% select(row_id, release_date, notable), by = c("to" = "row_id")) %>%
+      mutate(release_year = as.integer(release_date)) %>%
+      filter(!is.na(release_year)) %>%
+      left_join(nodes %>% select(row_id, name, type) %>%
+                  rename(artist_id = row_id, artist_name = name),
+                by = c("from" = "artist_id")) %>%
+      filter(type %in% c("Person", "MusicalGroup"))
     
-    performer_info <- performer_edges %>%
-      left_join(nodes, by = c("from" = "row_id")) %>%
-      filter(type == "Person") %>%
-      group_by(Performer = name) %>%
+    current_year <- 2040
+    
+    table <- release_info %>%
+      group_by(artist_name, from) %>%
       summarise(
-        `Recent Works` = n(),
-        `Charted Works` = sum(recent_works$notable[match(to, recent_works$row_id)], na.rm = TRUE),
+        First = min(release_year, na.rm = TRUE),
+        Total = n(),
+        Active = n_distinct(release_year),
+        Charted = sum(notable == TRUE, na.rm = TRUE),
         .groups = "drop"
       ) %>%
-      arrange(desc(`Charted Works`), desc(`Recent Works`)) %>%
-      slice_head(n = 10)
+      filter(First >= 2030, Total >= 3) %>%
+      left_join(collabs, by = "from") %>%
+      mutate(
+        Inactivity = (current_year - First + 1) - Active,
+        Collabs = replace_na(Collabs, 0),
+        Creative = replace_na(Creative, 0),
+        Freshness = exp(-Inactivity * 0.4),
+        ChartedRatio = Charted / Total,
+        Score = round(((Total * 1.0) + (ChartedRatio * 15) + (Collabs * 1.0) + (Creative * 1.2)) * Freshness, 2)
+      ) %>%
+      arrange(desc(Score))
     
-    # Defensive fallback in case it's still empty
-    if (nrow(performer_info) == 0) return(NULL)
-    
-    DT::datatable(performer_info, rownames = FALSE, options = list(
-      pageLength = 10,
+    colnames(table) <- c(
+      "Artist", "ID", "First Release", "Total Works", "Active Years",
+      "Charted", "Collabs", "Creative", "Inactivity", "Freshness",
+      "Charted Ratio", "Rising Star Score"
+    )
+    DT::datatable(table, rownames = FALSE, options = list(
+      pageLength = 5,
       autoWidth = TRUE
     ))
   })

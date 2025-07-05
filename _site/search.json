@@ -18,7 +18,7 @@
     "href": "index.html",
     "title": "VAST Challenge 2025: Music Influence Exploration",
     "section": "",
-    "text": "Folk\n\n\nFame\n\n\nFrom Folk to Fame\n\n\n\n\n\nTracing the Rise of Artists Through Data\n\n\n\n\n\n\n\n“From Folk to Fame” is part of the VAST Challenge 2025. This project explores the evolution of the Oceanus Folk music genre. By modeling the influence networks of artists, albums, and genres, we uncover patterns of cultural development, key collaborations, and the emergence of iconic figures.\nIn our Shiny app, you can explore:\n\n\n\n\nThe evolution of Oceanus Folk from 1992 to present\n\n\n\n\n\nMITB’ 25 - Analytics\n\n\n\n\n\nPredictive insights into emerging stars"
+    "text": "Folk\n\n\nFame\n\n\nFrom Folk to Fame\n\n\n\n\n\nTracing the Rise of Artists Through Data\n\n\n\n\n\n\n\n“From Folk to Fame” is part of the VAST Challenge 2025. This project explores the evolution of the Oceanus Folk music genre. By modeling the influence networks of artists, albums, and genres, we uncover patterns of cultural development, key collaborations, and the emergence of iconic figures.\nIn our Shiny app, you can explore:\n\n\n\n\nThe evolution of Oceanus Folk from 1992 to present\n\n\n\n\n\nMITB’ 25 - Analytics\n\n\n\n\n\nPredictive insights into emerging stars"
   },
   {
     "objectID": "about.html",
@@ -89,5 +89,12 @@
     "title": "From Folk to Fame",
     "section": "5.3 Shiny App 3: Rising Star Prediction Dashboard",
     "text": "5.3 Shiny App 3: Rising Star Prediction Dashboard\nThis app predicts future breakout artists by analyzing multiple career-related metrics.\nCore Features:\n\nRising Star Score calculation\nComparison of artist trajectories\nFilters by genre, debut year, or charted songs\n\nPurpose:\nDefine what makes a rising star and forecast which Oceanus Folk artists are likely to break out next."
+  },
+  {
+    "objectID": "index.html#project-overview",
+    "href": "index.html#project-overview",
+    "title": "VAST Challenge 2025: Music Influence Exploration",
+    "section": "1 Project Overview",
+    "text": "1 Project Overview\n“From Folk to Fame” is part of the VAST Challenge 2025.\nThis project explores the evolution of the Oceanus Folk music genre.\nBy modeling the influence networks of artists, albums, and genres, we uncover patterns of cultural development, key collaborations, and the emergence of iconic figures.\nIn our Shiny app, you can explore:\n\n\n ::: {.profile-quote} The evolution of Oceanus Folk from 1992 to present\n\n\n\n ::: {.profile-quote} MITB’ 25 - Analytics"
   }
 ]
