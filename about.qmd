@@ -6,7 +6,7 @@ format: html
 
 :::::::::::: team-container
 ::::: profile-card
-<a href="https://www.linkedin.com/in/patricia-trisno-93298a216/" target="_blank"> <img src="images/patricia.jpg" alt="Olivia"/> </a>
+<a href="https://www.linkedin.com/in/evangelineolivia/" target="_blank"> <img src="img/oliv.jpg" alt="Olivia"/> </a>
 
 ::: profile-name
 EVANGELINE OLIVIA
@@ -18,7 +18,7 @@ MITB' 25 - Analytics
 :::::
 
 ::::: profile-card
-<a href="https://www.linkedin.com/in/patricia-trisno-93298a216/" target="_blank"> <img src="images/patricia.jpg" alt="Patricia Trisno"/> </a>
+<a href="https://www.linkedin.com/in/patricia-trisno-93298a216/" target="_blank"> <img src="img/pat.jpg" alt="Patricia Trisno"/> </a>
 
 ::: profile-name
 PATRICIA TRISNO
@@ -30,7 +30,7 @@ MITB' 25 - Analytics
 :::::
 
 ::::: profile-card
-<a href="https://www.linkedin.com/in/patricia-trisno-93298a216/" target="_blank"> <img src="images/patricia.jpg" alt="Xuxinyi"/> </a>
+<a href="https://www.linkedin.com/in/catherine-xu-8941982b8/" target="_blank"> <img src="img/xinyi.jpg" alt="Xuxinyi"/> </a>
 
 ::: profile-name
 XU XINYI

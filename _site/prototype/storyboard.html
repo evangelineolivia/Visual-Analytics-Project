@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -145,8 +179,49 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> 1 Introduction</a></li>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link" data-scroll-target="#motivation"><span class="header-section-number">2</span> 2 Motivation</a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology"><span class="header-section-number">3</span> 3 Methodology</a>
+  <ul class="collapse">
+  <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation"><span class="header-section-number">3.1</span> Data Preparation</a></li>
+  <li><a href="#visualization-interaction" id="toc-visualization-interaction" class="nav-link" data-scroll-target="#visualization-interaction"><span class="header-section-number">3.2</span> Visualization &amp; Interaction</a></li>
+  <li><a href="#prototype-module-design" id="toc-prototype-module-design" class="nav-link" data-scroll-target="#prototype-module-design"><span class="header-section-number">3.3</span> Prototype Module Design</a></li>
+  </ul></li>
+  <li><a href="#storyboard" id="toc-storyboard" class="nav-link" data-scroll-target="#storyboard"><span class="header-section-number">4</span> Storyboard</a>
+  <ul class="collapse">
+  <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages"><span class="header-section-number">4.1</span> R Packages</a></li>
+  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset"><span class="header-section-number">4.2</span> Dataset</a></li>
+  <li><a href="#storyboard-1" id="toc-storyboard-1" class="nav-link" data-scroll-target="#storyboard-1"><span class="header-section-number">4.3</span> Storyboard</a></li>
+  <li><a href="#sailor-shifts-career-explorer" id="toc-sailor-shifts-career-explorer" class="nav-link" data-scroll-target="#sailor-shifts-career-explorer"><span class="header-section-number">4.4</span> Sailor Shift’s Career Explorer</a>
+  <ul class="collapse">
+  <li><a href="#section-one---overview" id="toc-section-one---overview" class="nav-link" data-scroll-target="#section-one---overview"><span class="header-section-number">4.4.1</span> Section One - Overview</a></li>
+  <li><a href="#section-two---career-timeline" id="toc-section-two---career-timeline" class="nav-link" data-scroll-target="#section-two---career-timeline"><span class="header-section-number">4.4.2</span> Section Two - Career Timeline</a></li>
+  <li><a href="#section-three---collaborations" id="toc-section-three---collaborations" class="nav-link" data-scroll-target="#section-three---collaborations"><span class="header-section-number">4.4.3</span> Section Three - Collaborations</a></li>
+  <li><a href="#section-three---influence-network" id="toc-section-three---influence-network" class="nav-link" data-scroll-target="#section-three---influence-network"><span class="header-section-number">4.4.4</span> Section Three - Influence Network</a></li>
+  </ul></li>
+  <li><a href="#oceanus-folk-influence-tracker" id="toc-oceanus-folk-influence-tracker" class="nav-link" data-scroll-target="#oceanus-folk-influence-tracker"><span class="header-section-number">4.5</span> Oceanus Folk Influence Tracker</a>
+  <ul class="collapse">
+  <li><a href="#section-one---overview-1" id="toc-section-one---overview-1" class="nav-link" data-scroll-target="#section-one---overview-1"><span class="header-section-number">4.5.1</span> Section One - Overview</a></li>
+  <li><a href="#section-two---influence-timeline" id="toc-section-two---influence-timeline" class="nav-link" data-scroll-target="#section-two---influence-timeline"><span class="header-section-number">4.5.2</span> Section Two - Influence Timeline</a></li>
+  <li><a href="#section-three---outward-impact" id="toc-section-three---outward-impact" class="nav-link" data-scroll-target="#section-three---outward-impact"><span class="header-section-number">4.5.3</span> Section Three - Outward Impact</a></li>
+  <li><a href="#section-four---roots" id="toc-section-four---roots" class="nav-link" data-scroll-target="#section-four---roots"><span class="header-section-number">4.5.4</span> Section Four - Roots</a></li>
+  </ul></li>
+  <li><a href="#rising-star-prediction-dashboard" id="toc-rising-star-prediction-dashboard" class="nav-link" data-scroll-target="#rising-star-prediction-dashboard"><span class="header-section-number">4.6</span> Rising Star Prediction Dashboard</a>
+  <ul class="collapse">
+  <li><a href="#section-one---rising-star-prediction-dashboard" id="toc-section-one---rising-star-prediction-dashboard" class="nav-link" data-scroll-target="#section-one---rising-star-prediction-dashboard"><span class="header-section-number">4.6.1</span> Section One - Rising Star Prediction Dashboard</a></li>
+  <li><a href="#section-two---contribution" id="toc-section-two---contribution" class="nav-link" data-scroll-target="#section-two---contribution"><span class="header-section-number">4.6.2</span> Section Two - Contribution</a></li>
+  <li><a href="#section-three---collaboration" id="toc-section-three---collaboration" class="nav-link" data-scroll-target="#section-three---collaboration"><span class="header-section-number">4.6.3</span> Section Three - Collaboration</a></li>
+  <li><a href="#section-four---public-recognition" id="toc-section-four---public-recognition" class="nav-link" data-scroll-target="#section-four---public-recognition"><span class="header-section-number">4.6.4</span> Section Four - Public Recognition</a></li>
+  <li><a href="#section-five---predictions" id="toc-section-five---predictions" class="nav-link" data-scroll-target="#section-five---predictions"><span class="header-section-number">4.6.5</span> Section Five - Predictions</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -170,8 +245,696 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> 1 Introduction</h1>
+<p>This project develops an interactive R Shiny web application for visual analytics based on the VAST Challenge 2025 Mini-Challenge 1 dataset. The dataset is a knowledge graph containing recording artists, albums, songs, collaborations, concerts, and influence connections.</p>
+<p>The goal is to help users trace the rise of a key artist (Sailor Shift), analyze the influence of the Oceanus Folk genre, and predict the next potential rising stars.</p>
+<p>The Shiny application combines graph exploration, timeline visualizations, dynamic filters, network plots, and descriptive tables. Users can slice the data, explore patterns, and generate insights interactively.</p>
+</section>
+<section id="motivation" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> 2 Motivation</h1>
+<p>Large and connected dataset such as music knowledge graphs are difficult to understand without the right tools. Static reports cannot easily capture how artists collaborate, influence each other, or evolve over time.</p>
+<p>This motivates building a modular Shiny dashboard to:</p>
+<p>Visualize complex networks (using tidygraph, ggraph, and visNetwork).</p>
+<p>Let users filter, search, and highlight key patterns interactively.</p>
+<p>Support career exploration, genre impact tracking, and forecasting within one platform.</p>
+<p>Combine descriptive stats (value boxes) with network graphs, trend charts, and dynamic data tables for comprehensive visual analytics.</p>
+<p>By doing this, researchers and music analysts can easily find answers to:</p>
+<p>How has Sailor Shift’s career evolved?</p>
+<p>How does Oceanus Folk connect to other genres and artists?</p>
+<p>Who might be the next artist to break out based on network and trend signals?</p>
+</section>
+<section id="methodology" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> 3 Methodology</h1>
+<p>The methodology follows three phases:</p>
+<section id="data-preparation" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="data-preparation"><span class="header-section-number">3.1</span> Data Preparation</h2>
+<p>Load the knowledge graph using jsonlite and process it with tidygraph and igraph.</p>
+<p>Clean and transform the data to identify nodes (artists, works) and edges (collaborations, influences).</p>
+</section>
+<section id="visualization-interaction" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="visualization-interaction"><span class="header-section-number">3.2</span> Visualization &amp; Interaction</h2>
+<p>Build interactive modules using visNetwork and ggraph for network plots.</p>
+<p>Use plotly and ggplot2 for timeline charts and trend plots.</p>
+<p>Add dynamic UI controls (selectInput, checkboxGroupInput, sliderInput) so users can filter by artist, time period, genre, and connection type.</p>
+</section>
+<section id="prototype-module-design" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="prototype-module-design"><span class="header-section-number">3.3</span> Prototype Module Design</h2>
+<p>Develop separate modules for each focus area:</p>
+<p>Sailor Shift’s Career Explorer (career stats, timeline, collaborations, influences).</p>
+<p>Oceanus Folk Influence Tracker (genre overview, timeline, outward impact, roots).</p>
+<p>Rising Star Prediction Dashboard (artist comparison, activity, contribution, collaboration, public recognition, prediction score).</p>
+<p>Render network graphs and tables in each module to enable users to drill down into details and gain actionable insights.</p>
+</section>
+</section>
+<section id="storyboard" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Storyboard</h1>
+<section id="r-packages" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="r-packages"><span class="header-section-number">4.1</span> R Packages</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse, jsonlite,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>               tidygraph, ggraph, igraph, plotly, visNetwork,ggtext, ggiraph,patchwork,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>               kableExtra, showtext,lubridate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="dataset" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="dataset"><span class="header-section-number">4.2</span> Dataset</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(<span class="st">'MC1_graph.json'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="storyboard-1" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="storyboard-1"><span class="header-section-number">4.3</span> Storyboard</h2>
+<p>The storyboard is designed to visually represent the user’s journey within the R Shiny dashboard applications. It acts as a bridge between research insights and user interaction, illustrating how findings are translated into visual and interactive elements. The UI design and interactive features are thoughtfully developed to enable seamless exploration and analysis of data including network components helping users identify key patterns and trace the rising of artist in the music industry.</p>
+<p>The prototype is organized into three main focus areas:</p>
+<ul>
+<li><p>Sailor Shift’s Career Explorer</p></li>
+<li><p>Oceanus Folk Influence Tracker</p></li>
+<li><p>Rising Star Prediction Dashboard</p></li>
+</ul>
+</section>
+<section id="sailor-shifts-career-explorer" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="sailor-shifts-career-explorer"><span class="header-section-number">4.4</span> Sailor Shift’s Career Explorer</h2>
+<section id="section-one---overview" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="section-one---overview"><span class="header-section-number">4.4.1</span> Section One - Overview</h3>
+<p>This tab serves as the landing page for Sailor Shift’s Career Explorer module. It provides a high-level summary of the artist’s musical trajectory. As shown in the figure below, the Overview sub-tab consolidates key statistics into a series of information cards that allow users to quickly grasp the scope and success of her career.</p>
+<p>Career metrics display, showing:</p>
+<ul>
+<li>Years active</li>
+<li>Number of releases</li>
+<li>Number of collaborators</li>
+<li>Number of creative roles</li>
+<li>Number of charted works</li>
+<li>Chart success ratio</li>
+</ul>
+<p><img src="..\img/storyboard/ui1.png" class="img-fluid"></p>
+<p>Code chunk below shows the simplified version of UI and Server components in R Shiny application for Overview sub-tab.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># UI for Overview tab - Sailor Shift’s Career Explorer</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>SailorOverviewRow1 <span class="ot">&lt;-</span> <span class="fu">fluidRow</span>(</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabsetPanel</span>(</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tabPanel</span>(<span class="st">"Overview"</span>, </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">fluidRow</span>(</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">valueBox</span>(),</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">valueBox</span>(),</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">valueBox</span>()</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">fluidRow</span>(</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        <span class="fu">valueBox</span>(),</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">valueBox</span>(),</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        <span class="fu">valueBox</span>()</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Server Components</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>activeYears <span class="ot">&lt;-</span> <span class="fu">renderValueBox</span>({})</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>totalReleases <span class="ot">&lt;-</span> <span class="fu">renderValueBox</span>({})</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>collaborators <span class="ot">&lt;-</span> <span class="fu">renderValueBox</span>({})</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>creativeRoles <span class="ot">&lt;-</span> <span class="fu">renderValueBox</span>({})</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>chartedWorks <span class="ot">&lt;-</span> <span class="fu">renderValueBox</span>({})</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>chartSuccess <span class="ot">&lt;-</span> <span class="fu">renderValueBox</span>({})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="section-two---career-timeline" class="level3" data-number="4.4.2">
+<h3 data-number="4.4.2" class="anchored" data-anchor-id="section-two---career-timeline"><span class="header-section-number">4.4.2</span> Section Two - Career Timeline</h3>
+<p>The Career Timeline tab enables users to interactively explore Sailor Shift’s music releases over the years. Users can:</p>
+<ul>
+<li>Filter releases by type (Album or Song)</li>
+<li>Select a year range using a slider</li>
+<li>Read description text that updates dynamically</li>
+<li>View a bar chart displaying the number of releases per year by type</li>
+<li>Examine a detailed data table of Sailor’s works with attributes like title, release year, genre, and whether the work was notable</li>
+</ul>
+<p><img src="..\img/storyboard/ui2.png" class="img-fluid"></p>
+<p>Code chunk below shows the simplified version of UI and Server components in R Shiny application for Overview sub-tab.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># UI </span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>CareerTimelineUI <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">titlePanel</span>(<span class="st">"Sailor Shift’s Career Timeline"</span>),</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabsetPanel</span>(</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tabPanel</span>(<span class="st">"Career Timeline"</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">fluidRow</span>(</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">column</span>(</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>          <span class="fu">selectInput</span>()),</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>          <span class="fu">sliderInput</span>(),</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>          <span class="fu">textAreaInput</span>()</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        <span class="fu">column</span>(</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>          <span class="fu">plotOutput</span>()</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">br</span>(),</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>      DT<span class="sc">::</span><span class="fu">dataTableOutput</span>()</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="er">)</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co">#Server</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>release_barplot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({})</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>release_table <span class="ot">&lt;-</span> DT<span class="sc">::</span><span class="fu">renderDataTable</span>({})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="section-three---collaborations" class="level3" data-number="4.4.3">
+<h3 data-number="4.4.3" class="anchored" data-anchor-id="section-three---collaborations"><span class="header-section-number">4.4.3</span> Section Three - Collaborations</h3>
+<p>The Collaborations tab provides a detailed network-based view of Sailor Shift’s creative relationships. It includes:</p>
+<p>Node and Relation Type Filters: These checkboxes allow users to filter the network by the type of entity (e.g., person, song, album) or relationship (e.g., ComposerOf, LyricistOf).</p>
+<p>Interactive Network Plot: A central network visualization shows Sailor at the center, connected to collaborators through edges labeled with their creative roles.</p>
+<p>Descriptive Panel: Offers a placeholder for dynamic text or analysis summaries.</p>
+<p>Data Table: Lists each collaborator with their name, relation to the work, work title, type (Album/Song), and release date.</p>
+<p><img src="..\img/storyboard/ui3.png" class="img-fluid"></p>
+<p>Code chunk below shows the simplified version of UI and Server components in R Shiny application for Overview sub-tab.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># UI</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>SailorCollabUI <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">titlePanel</span>(<span class="st">"Sailor Shift’s Collaborations"</span>),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabsetPanel</span>(</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tabPanel</span>(<span class="st">"Collaborations"</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">fluidRow</span>(</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">column</span>( </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>          <span class="fu">checkboxGroupInput</span>(), <span class="at">selected =</span>),</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>          <span class="fu">checkboxGroupInput</span>(),</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>          <span class="fu">textAreaInput</span>()</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        <span class="fu">column</span>(</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>          <span class="fu">visNetworkOutput</span>()</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">br</span>(),</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>      DT<span class="sc">::</span><span class="fu">dataTableOutput</span>()</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="er">)</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co">#Server</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>collab_network <span class="ot">&lt;-</span> <span class="fu">renderVisNetwork</span>({})</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>collab_table <span class="ot">&lt;-</span> DT<span class="sc">::</span><span class="fu">renderDataTable</span>({})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="section-three---influence-network" class="level3" data-number="4.4.4">
+<h3 data-number="4.4.4" class="anchored" data-anchor-id="section-three---influence-network"><span class="header-section-number">4.4.4</span> Section Three - Influence Network</h3>
+<p>The Influence Network tab visualizes how Sailor Shift’s musical works relate to others through influence connections. It allows users to:</p>
+<ul>
+<li>Filter by Genre (e.g., Doom Metal, Blues Rock)</li>
+<li>Filter by Influence Type (e.g., CoverOf, InStyleOf, DirectlySamples)</li>
+<li>Search and Select a Work from a dropdown list for focused exploration</li>
+<li>View a directed network plot that visually maps how her songs and albums connect to or are influenced by other artists’ works</li>
+<li>Read descriptive context in a dedicated panel</li>
+<li>Examine a data table listing all pairwise influence relationships, their types, and associated genres</li>
+</ul>
+<p><img src="..\img/storyboard/ui4.png" class="img-fluid"></p>
+<p>Code chunk below shows the simplified version of UI and Server components in R Shiny application for Overview sub-tab.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># UI</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>InfluenceNetworkUI <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">titlePanel</span>(<span class="st">"Sailor Shift’s Influence Network"</span>),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabsetPanel</span>(</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tabPanel</span>( </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">fluidRow</span>(</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">column</span>( </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>          <span class="fu">selectInput</span>(, <span class="at">choices =</span> <span class="fu">c</span>(), <span class="at">selected =</span>),</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>          <span class="fu">checkboxGroupInput</span>(</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>                             <span class="at">choices =</span> <span class="fu">c</span>(),</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>                             <span class="at">selected =</span> <span class="fu">c</span>()),</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>          <span class="fu">selectizeInput</span>(),</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>          <span class="fu">textAreaInput</span>()</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>        <span class="fu">column</span>(</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>          <span class="fu">visNetworkOutput</span>()</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>      <span class="fu">br</span>(),</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>      DT<span class="sc">::</span><span class="fu">dataTableOutput</span>()</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="co">#Server</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>influence_graph<span class="ot">&lt;-</span> <span class="fu">renderVisNetwork</span>({})</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>influence_table <span class="ot">&lt;-</span> DT<span class="sc">::</span><span class="fu">renderDataTable</span>({})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+</section>
+<section id="oceanus-folk-influence-tracker" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="oceanus-folk-influence-tracker"><span class="header-section-number">4.5</span> Oceanus Folk Influence Tracker</h2>
+<section id="section-one---overview-1" class="level3" data-number="4.5.1">
+<h3 data-number="4.5.1" class="anchored" data-anchor-id="section-one---overview-1"><span class="header-section-number">4.5.1</span> Section One - Overview</h3>
+<p>The Overview tab within the Oceanus Folk Influence Tracker module provides users with a macro-level snapshot of the genre’s scope and evolution.</p>
+<p>Key features include:</p>
+<p>Metric summary cards for:</p>
+<ul>
+<li>Total performers in the Oceanus Folk community</li>
+<li>Total music releases</li>
+<li>Span of activity years</li>
+<li>A stacked bar chart visualizing the number of songs vs albums released over time, helping users observe patterns in creative output (e.g., genre peaks, format preferences)</li>
+</ul>
+<p><img src="..\img/storyboard/ui5.png" class="img-fluid"></p>
+<p>Code chunk below shows the simplified version of UI and Server components in R Shiny application for Overview sub-tab.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># UI</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>OceanusFolkOverviewUI <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">titlePanel</span>(<span class="st">"Oceanus Folk Overview"</span>),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabsetPanel</span>(</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tabPanel</span>(</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">fluidRow</span>(</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">valueBox</span>(),</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">valueBox</span>(),</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        <span class="fu">valueBox</span>()</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">br</span>(),</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">fluidRow</span>(</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>        <span class="fu">column</span>(</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>          <span class="fu">plotOutput</span>()</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Server</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>totalperformers <span class="ot">&lt;-</span> <span class="fu">renderValueBox</span>({})</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>totalReleases <span class="ot">&lt;-</span> <span class="fu">renderValueBox</span>({})</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>activity_year <span class="ot">&lt;-</span> <span class="fu">renderValueBox</span>({})</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>folk_release_chart <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="section-two---influence-timeline" class="level3" data-number="4.5.2">
+<h3 data-number="4.5.2" class="anchored" data-anchor-id="section-two---influence-timeline"><span class="header-section-number">4.5.2</span> Section Two - Influence Timeline</h3>
+<p>The Influence Timeline tab visualizes how Oceanus Folk has contributed to musical influence across time. Key components include:</p>
+<ul>
+<li>Checkbox filters to select different influence types (e.g., CoverOf, InterpolatesFrom, LyricalReferenceTo)</li>
+<li>A year range slider to narrow the temporal window of interest</li>
+<li>A multicolored line chart showing trends in the number of influence connections (by type) over time</li>
+<li>A description box for narrative or insight generation</li>
+</ul>
+<p><img src="..\img/storyboard/ui6.png" class="img-fluid"></p>
+<p>Code chunk below shows the simplified version of UI and Server components in R Shiny application for Overview sub-tab.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># UI</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>InfluenceTimelineUI <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">titlePanel</span>(),</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabsetPanel</span>(</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tabPanel</span>(</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">fluidRow</span>(</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">column</span>(</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>          <span class="fu">checkboxGroupInput</span>( </span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">choices =</span> <span class="fu">c</span>(),</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">selected =</span> <span class="fu">c</span>()),</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>          <span class="fu">sliderInput</span>(),</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>          <span class="fu">textAreaInput</span>()</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>        <span class="fu">column</span>(</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>          <span class="fu">plotOutput</span>()</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Server</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>influence_timeline_chart <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="section-three---outward-impact" class="level3" data-number="4.5.3">
+<h3 data-number="4.5.3" class="anchored" data-anchor-id="section-three---outward-impact"><span class="header-section-number">4.5.3</span> Section Three - Outward Impact</h3>
+<p>The Outward Impact tab explores the ripple effect of the Oceanus Folk genre across genres and artists. It features:</p>
+<ul>
+<li>A genre filter dropdown to narrow results by specific genres influenced</li>
+<li>A central network graph visualizing songs/albums influenced by Oceanus Folk across different genres and artists</li>
+<li>A description box for contextual notes or automated narrative summaries</li>
+</ul>
+<p>Two tables: - One summarizing the number of songs per genre influenced by Oceanus Folk - Another listing artists with the most notable songs influenced by the genre</p>
+<p><img src="..\img/storyboard/ui7.png" class="img-fluid"></p>
+<p>Code chunk below shows the simplified version of UI and Server components in R Shiny application for Overview sub-tab.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># UI</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>OutwardImpactUI <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">titlePanel</span>(<span class="st">"Genre &amp; Artist Influenced by Oceanus Folk"</span>),</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabsetPanel</span>(</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tabPanel</span>( </span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">fluidRow</span>(</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">column</span>(</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>          <span class="fu">selectInput</span>(),</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>          <span class="fu">textAreaInput</span>()</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">column</span>(</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>          <span class="fu">visNetworkOutput</span>()</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">br</span>(),</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">fluidRow</span>(</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>        <span class="fu">column</span>(</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>          <span class="fu">h5</span>(),</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>          DT<span class="sc">::</span><span class="fu">dataTableOutput</span>()</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>        <span class="fu">column</span>(</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>          <span class="fu">h5</span>(),</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>          DT<span class="sc">::</span><span class="fu">dataTableOutput</span>()</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Server</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>influenced_network <span class="ot">&lt;-</span> <span class="fu">renderVisNetwork</span>({})</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>influenced_genre_table <span class="ot">&lt;-</span> DT<span class="sc">::</span><span class="fu">renderDataTable</span>({})</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>influenced_artist_table <span class="ot">&lt;-</span> DT<span class="sc">::</span><span class="fu">renderDataTable</span>({})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="section-four---roots" class="level3" data-number="4.5.4">
+<h3 data-number="4.5.4" class="anchored" data-anchor-id="section-four---roots"><span class="header-section-number">4.5.4</span> Section Four - Roots</h3>
+<p>The <strong>Roots</strong> tab helps users uncover the foundation influences behind Oceanus Folk songs.</p>
+<p>Users can:</p>
+<ul>
+<li><p>Filter the network by genre to explore specific stylistic influences</p></li>
+<li><p>View a network graph highlighting genres and songs that influenced Oceanus Folk, with Oceanus Folk nodes and influenced song nodes distinctly colored</p></li>
+<li><p>Read a dynamic description that explains the context and insights</p></li>
+<li><p>Analyze a table summarizing which genres most frequently influenced Oceanus Folk tracks</p></li>
+</ul>
+<p><img src="..\img/storyboard/ui8.png" class="img-fluid"></p>
+<p>Code chunk below shows the simplified version of UI and Server components in R Shiny application for Overview sub-tab.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># UI</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>RootsTab <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">titlePanel</span>(<span class="st">"Oceanus Folk’s Evolving Roots"</span>),</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fluidRow</span>(</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">selectInput</span>( inputId, label, <span class="at">choices =</span> <span class="fu">c</span>()), <span class="co"># Dropdown to filter genre</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">tabsetPanel</span>(</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>        <span class="fu">tabPanel</span>(</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">"Description"</span>,</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>          <span class="fu">verbatimTextOutput</span>(<span class="st">"description_text"</span>) <span class="co"># Descriptive explanation</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>          )</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>      <span class="fu">plotOutput</span>() <span class="co"># Display network visualization of genre-song influence</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fluidRow</span>(</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>      DT<span class="sc">::</span><span class="fu">dataTableOutput</span>() <span class="co"># Data table showing genre and count</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Server</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>roots_description_text <span class="ot">&lt;-</span> <span class="fu">renderText</span>({})</span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>roots_network <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({})</span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>roots_genre_table <span class="ot">&lt;-</span> DT<span class="sc">::</span><span class="fu">renderDataTable</span>({})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+</section>
+<section id="rising-star-prediction-dashboard" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="rising-star-prediction-dashboard"><span class="header-section-number">4.6</span> Rising Star Prediction Dashboard</h2>
+<section id="section-one---rising-star-prediction-dashboard" class="level3" data-number="4.6.1">
+<h3 data-number="4.6.1" class="anchored" data-anchor-id="section-one---rising-star-prediction-dashboard"><span class="header-section-number">4.6.1</span> Section One - Rising Star Prediction Dashboard</h3>
+<p>The <strong>Activity</strong> tab provides a comparative view of artists’ release behaviors and performance history.</p>
+<p>Users can:</p>
+<ul>
+<li>Select up to three artists (A, B, and C) for side-by-side comparison</li>
+<li>View individual network graphs showing each artist’s release and influence structure</li>
+<li>Analyze a timeline line chart of songs or albums released by the selected artists over time</li>
+<li>Track activity trends to identify peak creative periods and gaps across artist careers</li>
+</ul>
+<p><img src="..\img/storyboard/ui9.png" class="img-fluid"></p>
+<p>Code chunk below shows the simplified version of UI and Server components in R Shiny application for Overview sub-tab.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># UI</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>ArtistsActivityTab <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">titlePanel</span>(<span class="st">"Artist’s Activity"</span>),</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fluidRow</span>(</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(<span class="fu">selectInput</span>(<span class="at">choices =</span> <span class="fu">c</span>()) <span class="co"># Dropdown for Artist A</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(<span class="fu">selectInput</span>(<span class="at">choices =</span> <span class="fu">c</span>()) <span class="co"># Dropdown for Artist B</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(<span class="fu">selectInput</span>(<span class="at">choices =</span> <span class="fu">c</span>()) <span class="co"># Dropdown for Artist C</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fluidRow</span>(</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">plotOutput</span>() <span class="co"># Plot for Artist A</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>      <span class="fu">plotOutput</span>() <span class="co"># Plot for Artist B</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fluidRow</span>(</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>      <span class="fu">plotOutput</span>() <span class="co"># Plot for Artist C</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>      <span class="fu">plotOutput</span>() <span class="co"># Line graph comparing release trends</span></span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Server</span></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>artist_a_network <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({})</span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>artist_b_network <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({})</span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>artist_c_network <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({})</span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>release_timeline <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="section-two---contribution" class="level3" data-number="4.6.2">
+<h3 data-number="4.6.2" class="anchored" data-anchor-id="section-two---contribution"><span class="header-section-number">4.6.2</span> Section Two - Contribution</h3>
+<p>The <strong>Contribution</strong> tab highlights the creative roles played by artists in Oceanus Folk.</p>
+<p>Users can:</p>
+<ul>
+<li>Select and compare up to three artists (A, B, and C)</li>
+<li>Explore network graphs that visualize each artist’s contributions as a composer, lyricist, or producer</li>
+<li>Analyze a contribution table showing the number of works attributed to each role</li>
+<li>Identify key contributors to the genre’s development through their behind-the-scenes impact</li>
+</ul>
+<p><img src="..\img/storyboard/ui10.png" class="img-fluid"></p>
+<p>Code chunk below shows the simplified version of UI and Server components in R Shiny application for Overview sub-tab.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># UI</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>ArtistsContributionTab <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">titlePanel</span>(<span class="st">"Artist’s Contribution"</span>),</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fluidRow</span>(</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(<span class="fu">selectInput</span>(<span class="at">choices =</span> <span class="fu">c</span>()) <span class="co"># Dropdown for Artist A</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(<span class="fu">selectInput</span>(<span class="at">choices =</span> <span class="fu">c</span>()) <span class="co"># Dropdown for Artist B</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(<span class="fu">selectInput</span>(<span class="at">choices =</span> <span class="fu">c</span>()) <span class="co"># Dropdown for Artist C</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fluidRow</span>(</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(<span class="fu">plotOutput</span>() <span class="co"># Artist A Network Graph</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(<span class="fu">plotOutput</span>() <span class="co"># Artist B Network Graph</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fluidRow</span>(</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(<span class="fu">plotOutput</span>() <span class="co"># Artist C Network Graph</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(DT<span class="sc">::</span><span class="fu">dataTableOutput</span>() <span class="co"># Contribution_table</span></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Server</span></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>contrib_graph_a <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({}) <span class="co"># Network graph for Artist A's contributions (ComposerOf, LyricistOf, ProducerOf)</span></span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>contrib_graph_b <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({}) <span class="co"># Network graph for Artist B's contributions</span></span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>contrib_graph_c <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({}) <span class="co"># Network graph for Artist C's contributions</span></span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>contribution_table <span class="ot">&lt;-</span> DT<span class="sc">::</span><span class="fu">renderDataTable</span>({}) <span class="co"># DataTable showing ComposerOf, LyricistOf, and ProducerOf for selected artists</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="section-three---collaboration" class="level3" data-number="4.6.3">
+<h3 data-number="4.6.3" class="anchored" data-anchor-id="section-three---collaboration"><span class="header-section-number">4.6.3</span> Section Three - Collaboration</h3>
+<p>The <strong>Artist’s Collaboration</strong> tab showcases the collaborative relationships of Oceanus Folk artists. Users can:</p>
+<ul>
+<li>Select and compare up to three artists (A, B, and C)</li>
+<li>Visualize each artist’s collaboration network with individuals and musical groups</li>
+<li>Analyze differences in collaboration patterns using structured network graphs</li>
+<li>Refer to a summary table that lists the number of collaborations with persons and musical groups per artist</li>
+</ul>
+<p><img src="..\img/storyboard/ui11.png" class="img-fluid"></p>
+<p>Code chunk below shows the simplified version of UI and Server components in R Shiny application for Overview sub-tab.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># UI</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>ArtistsCollaborationTab <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">titlePanel</span>(<span class="st">"Artist’s Collaboration"</span>),</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fluidRow</span>(</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(<span class="fu">selectInput</span>(<span class="at">choices =</span> <span class="fu">c</span>()) <span class="co"># Dropdown for Artist A</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(<span class="fu">selectInput</span>(<span class="at">choices =</span> <span class="fu">c</span>()) <span class="co"># Dropdown for Artist B</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(<span class="fu">selectInput</span>(<span class="at">choices =</span> <span class="fu">c</span>()) <span class="co"># Dropdown for Artist C</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fluidRow</span>(</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(<span class="fu">plotOutput</span>() <span class="co"># Artist A Network Graph</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(<span class="fu">plotOutput</span>() <span class="co"># Artist B Network Graph</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fluidRow</span>(</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(<span class="fu">plotOutput</span>() <span class="co"># Artist C Network Graph</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(DT<span class="sc">::</span><span class="fu">dataTableOutput</span>() <span class="co"># Collaboration_table</span></span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Server</span></span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>collab_graph_a <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({}) <span class="co"># Network plot showing Artist A's collaborations</span></span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>collab_graph_b <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({}) <span class="co"># Network plot showing Artist B's collaborations</span></span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>collab_graph_c <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({}) <span class="co"># Network plot showing Artist C's collaborations</span></span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>collaboration_table <span class="ot">&lt;-</span> DT<span class="sc">::</span><span class="fu">renderDataTable</span>({}) <span class="co"># Table showing artist + number of collaborations with Person &amp; MusicalGroup</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="section-four---public-recognition" class="level3" data-number="4.6.4">
+<h3 data-number="4.6.4" class="anchored" data-anchor-id="section-four---public-recognition"><span class="header-section-number">4.6.4</span> Section Four - Public Recognition</h3>
+<p>The <strong>Public Recognition</strong> tab compares how often each artist’s work charted in public rankings. Users can:</p>
+<ul>
+<li>Select up to three artists (A, B, and C) for comparison</li>
+<li>View a stacked bar chart that contrasts the number of&nbsp;<em>charted</em>&nbsp;versus&nbsp;<em>uncharted</em>&nbsp;releases per artist</li>
+<li>Explore a detailed table listing each artist’s songs or albums along with their release year, type, and chart status</li>
+<li>Analyze recognition trends and identify which artists consistently achieve public acclaim</li>
+</ul>
+<p><img src="..\img/storyboard/ui12.png" class="img-fluid"></p>
+<p>Code chunk below shows the simplified version of UI and Server components in R Shiny application for Overview sub-tab.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># UI</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>PublicRecognitionTab <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">titlePanel</span>(<span class="st">"Artist’s Charted vs Uncharted Songs"</span>),</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fluidRow</span>(</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(<span class="fu">selectInput</span>(<span class="at">choices =</span> <span class="fu">c</span>()) <span class="co"># Dropdown for Artist A</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(<span class="fu">selectInput</span>(<span class="at">choices =</span> <span class="fu">c</span>()) <span class="co"># Dropdown for Artist B</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(<span class="fu">selectInput</span>(<span class="at">choices =</span> <span class="fu">c</span>()) <span class="co"># Dropdown for Artist C</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fluidRow</span>(</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(<span class="fu">plotOutput</span>() <span class="co"># Stacked bar chart for releases</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fluidRow</span>(</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(DT<span class="sc">::</span><span class="fu">dataTableOutput</span>() <span class="co"># Detailed list of songs/albums and chart status</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Server</span></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>charted_vs_uncharted <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({}) <span class="co"># Create a stacked bar chart showing Charted vs Uncharted songs per artist</span></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>charted_table <span class="ot">&lt;-</span> DT<span class="sc">::</span><span class="fu">renderDataTable</span>({}) <span class="co"># Table with artist name, song/album, year, type, and charted status</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="section-five---predictions" class="level3" data-number="4.6.5">
+<h3 data-number="4.6.5" class="anchored" data-anchor-id="section-five---predictions"><span class="header-section-number">4.6.5</span> Section Five - Predictions</h3>
+<p>The <strong>Predictions</strong> tab identifies emerging talents most likely to become the next big names in Oceanus Folk. Users can:</p>
+<ul>
+<li>Explore a ranked table of rising stars, sorted by calculated “Rising Star Score”</li>
+<li>Review artist attributes including first release year, total works, collaborations, freshness, and inactivity</li>
+<li>Understand how metrics like charted ratio and creative activity contribute to the prediction</li>
+<li>Read a description that explains how the prediction model works and what each variable means</li>
+</ul>
+<p><img src="..\img/storyboard/ui13.png" class="img-fluid"></p>
+<p>Code chunk below shows the simplified version of UI and Server components in R Shiny application for Overview sub-tab.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># UI</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>PredictionsTab <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">titlePanel</span>(<span class="st">"Oceanus Folk Next Rising Star"</span>),</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fluidRow</span>(</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(DT<span class="sc">::</span><span class="fu">dataTableOutput</span>() <span class="co"># Main prediction result table</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fluidRow</span>(</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">column</span>(<span class="fu">tabsetPanel</span>(</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>        <span class="fu">tabPanel</span>(</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">"Description"</span>,</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>          <span class="fu">wellPanel</span>(<span class="fu">verbatimTextOutput</span>(<span class="st">"rising_star_description"</span>) <span class="co"># Descriptive Explanation</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>          )</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Server</span></span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>rising_star_table <span class="ot">&lt;-</span> DT<span class="sc">::</span><span class="fu">renderDataTable</span>({}) <span class="co"># Table with columns like: Artist, ID, First Release, Total Works, etc.</span></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>output<span class="sc">$</span>rising_star_description <span class="ot">&lt;-</span> <span class="fu">renderText</span>({}) <span class="co"># Explanation of the Rising Star Score and what users should interpret</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
