@@ -22,7 +22,7 @@ website:
             href: Team/Minutes_of_Meetings/MM_Page.html
       - text: "Shiny App"
         menu:
-          - href: about.qmd
+          - href: userguide.pdf
             text: "User Guide"
           - href: https://evangelineolivia.shinyapps.io/ShinyApp/
             text: "Shiny App"
