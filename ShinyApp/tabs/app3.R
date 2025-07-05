@@ -1307,7 +1307,7 @@ app3_server <- function(input, output, session) {
       left_join(nodes %>% select(row_id, name, type) %>%
                   rename(artist_id = row_id, artist_name = name),
                 by = c("from" = "artist_id")) %>%
-      filter(type %in% c("Person", "MusicalGroup"))
+      filter(type %in% c("Person"))
     
     current_year <- 2040
     
