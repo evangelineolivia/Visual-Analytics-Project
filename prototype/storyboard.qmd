@@ -6,7 +6,7 @@ format:
   html
 ---
 
-# 1 Introduction
+# Introduction
 
 This project develops an interactive R Shiny web application for visual analytics based on the VAST Challenge 2025 Mini-Challenge 1 dataset. The dataset is a knowledge graph containing recording artists, albums, songs, collaborations, concerts, and influence connections.
 
@@ -14,7 +14,7 @@ The goal is to help users trace the rise of a key artist (Sailor Shift), analyze
 
 The Shiny application combines graph exploration, timeline visualizations, dynamic filters, network plots, and descriptive tables. Users can slice the data, explore patterns, and generate insights interactively.
 
-# 2 Motivation
+# Motivation
 
 Large and connected dataset such as music knowledge graphs are difficult to understand without the right tools. Static reports cannot easily capture how artists collaborate, influence each other, or evolve over time.
 
@@ -36,7 +36,7 @@ How does Oceanus Folk connect to other genres and artists?
 
 Who might be the next artist to break out based on network and trend signals?
 
-# 3 Methodology
+# Methodology
 
 The methodology follows three phases:
 
